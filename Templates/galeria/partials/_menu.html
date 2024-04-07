@@ -1,0 +1,38 @@
+{% load static %}
+<nav class="bg-gray-800 text-white relative flex items-center justify-between h-19 px-4 py-0">
+    <div class="container flex flex-wrap justify-between items-center mx-auto">
+        <a href="" class="flex items-center">
+            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">LABQFC</span>
+        </a>
+        <button class="inline-flex items-center p-2 ml-3 text-sm text-gray-400 rounded-lg md:hidden"
+            id="navbar-toggle">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                </path>
+            </svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul
+                class="flex items-center flex-col p-4  bg-gray-800 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-none">
+                <li>
+                    <a href="{% url 'index' %}" class="block pr-4 pl-3 text-white rounded md:bg-transparent md:p-0"
+                        aria-current="page">HOME</a>
+                </li>
+                <li>
+                    <a href="{% url 'moleculas' %}"
+                        class="block pr-4 pl-3 text-white rounded md:bg-transparent md:p-0">MOLECULES</a>
+                </li>
+                <li>
+                    <a href="{% url 'comparar' %}"
+                        class="block pr-4 pl-3 text-white rounded md:bg-transparent md:p-0">SIMILARITY</a>
+                </li>
+                <li class="relative">
+                    <a href="#" class="block pr-4 pl-3 text-white rounded md:bg-transparent md:p-0 dropdown-toggle"
+                        id="navbar-dropdown-toggle">MORE</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

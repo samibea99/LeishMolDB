@@ -7,13 +7,15 @@ import logging
 import os
 from django.http import JsonResponse
 from rdkit import Chem
-from rdkit.Chem import AllChem, DataStructs, Descriptors
+from rdkit.Chem import AllChem, DataStructs, Descriptors, Lipinski, rdMolDescriptors
 from .forms import UploadSDFForm
 from django.db.models import Q 
 import pandas as pd
 from django.template.loader import render_to_string
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
+from django.core.paginator import Paginator
+import tempfile
 
 def index(request):
     return render(request, 'galeria/index.html')
@@ -23,29 +25,60 @@ def index(request):
     return render(request, 'galeria/index.html', {'total_linhas': total_linhas}) 
 
 def moleculas(request):
-    mol = similaridade.objects.order_by("id").filter(publicada=True)
+    mol_list = similaridade.objects.order_by("id").filter(publicada=True)
+    paginator = Paginator(mol_list, 96)  # 96 cards por página
+
+    page_number = request.GET.get('page')
+    mol = paginator.get_page(page_number)
+
     return render(request, 'galeria/moleculas.html',  {"cards": mol})
 
+def moleculas_list_view(request):
+    molecula_list = similaridade.objects.all()
+    paginator = Paginator(molecula_list, 54) 
+
+    page = request.GET.get('page')
+    moleculas = paginator.get_page(page)
+
+    print('Número de moléculas:', molecula_list.count())
+    print('Número da página atual:', moleculas.number)
+    print('Total de páginas:', moleculas.paginator.num_pages)
+
+    return render(request, 'galeria/moleculas.html', {'moleculas': moleculas})
+
 def extract_molecular_weight_and_logp(sdf_path):
+    
+    # Cria um fornecedor de moléculas a partir do arquivo SDF, que permite iterar sobre as moléculas nele contidas.
     suppl = Chem.SDMolSupplier(str(sdf_path))
+    
+    # Obtém a primeira molécula não nula do fornecedor. Isso é feito utilizando uma expressão geradora
+    # com um 'if' condicional para filtrar moléculas nulas (inválidas).
     mol = next((m for m in suppl if m is not None), None)  # Apenas a primeira molécula válida.
 
+    # Verifica se uma molécula válida foi encontrada; se não, retorna None.
     if mol is None:
         return None
 
+    # Adiciona átomos de hidrogênio explicitamente à molécula, 
+    # para cálculos precisos de propriedades químicas.
     mol_with_hydrogens = Chem.AddHs(mol)
+    
+    # Calcula o peso molecular da molécula com hidrogênios adicionados.
     mol_weight = Descriptors.MolWt(mol_with_hydrogens)
+    
+    # Calcula o log P (coeficiente de partição octanol-água) da molécula.
     log_p = Descriptors.MolLogP(mol_with_hydrogens)
 
+    # Retorna um dicionário contendo o peso molecular e log P da molécula.
     return {'peso_molecular': mol_weight, 'logp': log_p}
 
 def ordenar_moleculas_view(request):
     ordenacao = request.GET.get('ordenacao')
 
-    # Obtenha todas as instâncias de Similaridade.
+    # Obtem todas as instâncias de Similaridade.
     moleculas = similaridade.objects.all()
 
-    # Crie uma lista para armazenar as moléculas e seus dados extraídos.
+    # Cria uma lista para armazenar as moléculas e seus dados extraídos.
     moleculas_com_dados = []
     for mol in moleculas:
         dados = extract_molecular_weight_and_logp(mol.sdf.path)
@@ -74,10 +107,10 @@ def imagem(request, mol_id):
 def download_data_view(request, pk):
     objeto = get_object_or_404(similaridade, pk=mol_id)
     
-    # Aqui você deve obter os dados do objeto e formatá-los como desejar
+    # Obtem os dados do objeto e formata como desejar
     dados_para_download = objeto.dados_de_interesse()
 
-    # Agora, vamos criar um arquivo temporário para enviar como resposta
+    # Agora, cria um arquivo temporário para enviar como resposta
     filename = "dados_para_download.txt"
     with open(filename, 'w') as f:
         f.write(dados_para_download)
@@ -87,24 +120,30 @@ def download_data_view(request, pk):
     response['Content-Disposition'] = 'attachment; filename="dados_para_download.txt"'
     return response
 
-
 def buscar(request):    
     categoria = request.GET.get('categoria')
+    nome_a_buscar = request.GET.get('buscar')
     mol = similaridade.objects.order_by("id").filter(publicada=True)
 
     if categoria:
         mol = mol.filter(categoria__icontains=categoria)
 
-    if "buscar" in request.GET:
-        nome_a_buscar = request.GET['buscar']
-        if nome_a_buscar:
-            mol = mol.filter(Q(nome__icontains=nome_a_buscar) | 
-                             Q(smile__icontains=nome_a_buscar) | 
-                             Q(categoria__icontains=nome_a_buscar) | 
-                             Q(sdf__icontains=nome_a_buscar) | 
-                             Q(url__icontains=nome_a_buscar))
+    if nome_a_buscar:
+        # Verifica se o termo de busca é um número e pode ser um ID.
+        try:
+            nome_a_buscar_as_int = int(nome_a_buscar)
+            # Primeiro tenta buscar pelo ID.
+            mol = mol.filter(id=nome_a_buscar_as_int)
+        except ValueError:
+            # Se não for um número, faz a busca por outros campos de texto.
+            mol = mol.filter(
+                Q(nome__icontains=nome_a_buscar) | 
+                Q(smile__icontains=nome_a_buscar) | 
+                Q(categoria__icontains=nome_a_buscar) |  
+                Q(url__icontains=nome_a_buscar)
+            )
             
-    return render(request, 'galeria/buscar.html', {"cards": mol})   
+    return render(request, 'galeria/buscar.html', {"cards": mol}) 
 
 def exemplo_molecula_view(request):
     # Criando uma molécula de exemplo (etanol)
@@ -121,88 +160,99 @@ def exemplo_molecula_view(request):
 
     return render(request, 'galeria/teste.html', {'exemplo_data': exemplo_data})
 
-
 def extract_data_from_sdf(sdf_path):
-    data = {'Molecules': [], 'MolecularWeights': [], 'LogPs': []}
+    # Inicializa um dicionário para armazenar os dados extraídos.
+    data = {
+        'Molecules': [],
+        'MolecularWeights': [],
+        'LogPs': [],
+        'HDonors': [],
+        'HAcceptors': [],
+        'LipinskiRulesMet': [],
+        'tpsa': []  # Adiciona uma chave para TPSA.
+    }
+
+    # Cria um objeto SDMolSupplier do RDKit que pode ler moléculas de um arquivo SDF.
     suppl = Chem.SDMolSupplier(str(sdf_path))
 
+    # Itera sobre todas as moléculas no arquivo SDF.
     for idx, mol in enumerate(suppl):
-        if mol:
-            mol_with_hydrogens = Chem.AddHs(mol)  # Adiciona hidrogênios
+        if mol:  # Verifica se a molécula atual é válida (não nula).
+            mol_with_hydrogens = Chem.AddHs(mol)
             smiles = Chem.MolToSmiles(mol_with_hydrogens)
             mol_weight = Descriptors.MolWt(mol_with_hydrogens)
             log_p = Descriptors.MolLogP(mol_with_hydrogens)
+            h_donors = Lipinski.NumHDonors(mol_with_hydrogens)
+            h_acceptors = Lipinski.NumHAcceptors(mol_with_hydrogens)
+            tpsa = rdMolDescriptors.CalcTPSA(mol_with_hydrogens)
 
+            # Avalia as regras de Lipinski.
+            rules_met = 0
+            if mol_weight <= 500: rules_met += 1
+            if log_p <= 5: rules_met += 1
+            if h_donors <= 5: rules_met += 1
+            if h_acceptors <= 10: rules_met += 1
+
+            # Adiciona os dados extraídos ao dicionário 'data'.
             data['Molecules'].append(smiles)
             data['MolecularWeights'].append(mol_weight)
             data['LogPs'].append(log_p)
+            data['HDonors'].append(h_donors)
+            data['HAcceptors'].append(h_acceptors)
+            data['LipinskiRulesMet'].append(rules_met)
+            data['tpsa'].append(tpsa)  # Adiciona o valor de TPSA ao dicionário.
 
     return data
 
 def molecula_view(request, id):
-    # Obter a instância do modelo com base no ID
+    # Obtem a instância do modelo com base no ID
     similaridade_instancia = get_object_or_404(similaridade, id=id)
     
     # O caminho do arquivo SDF é obtido pelo atributo 'path' do FileField
     sdf_path = similaridade_instancia.sdf.path
 
-    # Chamar a função para extrair os dados do arquivo SDF
+    # Chama a função para extrair os dados do arquivo SDF
     data = extract_data_from_sdf(sdf_path)
 
-    # Agora só vamos zipar as duas listas: pesos moleculares e LogPs
+    # Zipa as listas: pesos moleculares, LogPs, doadores de H e aceitadores de H
     moleculas_data = [
         {
             'peso_molecular': mw,
-            'logp': logp
+            'logp': logp,
+            'h_donors': hd,
+            'h_acceptors': ha,
+            'lipinski_rules_met': lr,
+            'tpsa': tpsa
         }
-        for mw, logp in zip(data['MolecularWeights'], data['LogPs'])
+        for mw, logp, hd, ha, lr, tpsa in zip(data['MolecularWeights'], data['LogPs'], data['HDonors'], data['HAcceptors'], data['LipinskiRulesMet'], data['tpsa'])
     ]
 
-    # Passar os dados extraídos para o contexto do template
+    # Passa os dados extraídos para o contexto do template
     return render(request, 'galeria/imagem.html', {'moleculas_data': moleculas_data, 'mol': similaridade_instancia})
 
 
+def download_sdfs(request):
+    # Cria um arquivo temporário
+    temp_file = tempfile.TemporaryFile(mode='w+')
 
-def download_pdf(request, id):
-    # Busca a molécula pelo ID
-    molecula = similaridade.objects.get(id=id)
+    # Itera sobre os objetos do modelo e escreve seu conteúdo no arquivo temporário
+    for obj in similaridade.objects.all():
+        sdf_path = obj.sdf.path
+        with open(sdf_path, 'r') as sdf:
+            temp_file.write(sdf.read() + '\n$$$$\n')
 
-    # Cria uma resposta HTTP do tipo PDF
-    response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = f'attachment; filename="mol_{molecula.id}.pdf"'
-    response['X-Content-Type-Options'] = 'nosniff'
+    # Move o ponteiro do arquivo para o início
+    temp_file.seek(0)
 
-    # Cria o objeto PDF
-    p = canvas.Canvas(response, pagesize=letter)
+    # Cria uma resposta HTTP com o conteúdo do arquivo temporário
+    response = HttpResponse(temp_file.read(), content_type='chemical/x-mdl-sdfile')
+    response['Content-Disposition'] = 'attachment; filename="combined_files.sdf"'
 
-    # Define um título para o PDF
-    p.setFont("Helvetica-Bold", 20)
-    p.drawString(100, 750, f"Dados da Molécula: {molecula.nome}")
-
-    # Insere os dados da molécula no PDF
-    p.setFont("Helvetica", 12)
-    y = 730
-    attributes = [
-        ("Nome", molecula.nome),
-        ("Categoria", molecula.categoria),
-        ("URL", molecula.url),
-        ("SMILES", molecula.smile),
-    ]
-
-    for attr, value in attributes:
-        p.drawString(100, y, f"{attr}: {value}")
-        y -= 20
-
-    # Adiciona um link para o arquivo SDF
-    y -= 20  # Decrementa y para posicionar o link abaixo dos outros dados
-    sdf_url = request.build_absolute_uri(molecula.sdf.url)
-    p.drawString(100, y, "SDF: Clique aqui para baixar")
-    p.linkURL(sdf_url, (100, y - 10, 300, y + 10), thickness=1)
-
-    p.showPage()
-    p.save()
+    # Fecha o arquivo temporário
+    temp_file.close()
 
     return response
+
 
 def comparar(request):
     return render(request, 'galeria/comparar.html') 
@@ -216,7 +266,6 @@ def resultado_similaridade(request):
                 error_message = "O arquivo enviado não é um SDF."
                 return render(request, 'galeria/comparar.html', {'form': form, 'error_message': error_message})
 
-            # Aqui é onde uploaded_mol_block deve ser definido
             uploaded_mol_block = uploaded_file.read()
 
             # Verifica se o conteúdo é binário e decodifica se necessário
@@ -227,26 +276,32 @@ def resultado_similaridade(request):
 
             # Continua o processamento apenas se uploaded_mol foi criado com sucesso
             if uploaded_mol:
-    # Processamento e cálculo da similaridade
                 similaridades = similaridade.objects.all()
                 similarities_with_ids = []
 
-    for similaridade_obj in similaridades:
-        sdf_path = similaridade_obj.sdf.path
-        mol_supplier = Chem.SDMolSupplier(sdf_path)
+                for similaridade_obj in similaridades:
+                    sdf_path = similaridade_obj.sdf.path
+                    mol_supplier = Chem.SDMolSupplier(sdf_path)
 
-        for ref_mol in mol_supplier:
-            if ref_mol:
-                # Cálculo da similaridade
-                fps_ref = AllChem.GetMorganFingerprint(ref_mol, 2)
-                fps_upload = AllChem.GetMorganFingerprint(uploaded_mol, 2)
-                similarity = DataStructs.TanimotoSimilarity(fps_ref, fps_upload)
+                    for ref_mol in mol_supplier:
+                        if ref_mol:
+                            # Cálculo da similaridade
+                            fps_ref = AllChem.GetMorganFingerprint(ref_mol, 2)
+                            fps_upload = AllChem.GetMorganFingerprint(uploaded_mol, 2)
+                            similarity = DataStructs.TanimotoSimilarity(fps_ref, fps_upload)
+                            
+                            # Converte a similaridade para porcentagem e arredonda para 2 casas decimais
+                            similarity_percentage = f"{similarity * 100:.2f}%"
+                            # Adiciona a similaridade em porcentagem e o objeto similaridade à lista
+                            similarities_with_ids.append((similarity, similarity_percentage, similaridade_obj))
 
-                if 0.9 <= similarity <= 1.0:
-                    # Adiciona a similaridade e o objeto similaridade à lista
-                    similarities_with_ids.append((similarity, similaridade_obj))
+                # Ordena a lista pelo valor de similaridade, em ordem decrescente
+                similarities_with_ids.sort(key=lambda x: x[0], reverse=True)
 
-    return render(request, 'galeria/resultado_similaridade.html', {'similarities_with_ids': similarities_with_ids})
+                # Seleciona as 10 maiores similaridades
+                top_10_similarities = similarities_with_ids[:10]
+
+                return render(request, 'galeria/resultado_similaridade.html', {'similarities_with_ids': top_10_similarities})
 
 
 def get_molecule_data(request):
@@ -254,7 +309,7 @@ def get_molecule_data(request):
     similaridade_obj = similaridade.objects.get(id=molecule_id)  # Obtém o objeto específico
     sdf_path = similaridade_obj.sdf.path  # Obtém o caminho do arquivo no sistema de arquivos
 
-    # O RDKit espera um caminho de arquivo ou um objeto de arquivo, então usamos o caminho
+    # O RDKit espera um caminho de arquivo ou um objeto de arquivo 
     suppl = Chem.SDMolSupplier(str(sdf_path))
     mols = [mol for mol in suppl if mol is not None]
 
@@ -262,21 +317,14 @@ def get_molecule_data(request):
     mol = mols[0] if mols else None
 
     if mol:
-        # Gera coordenadas 3D se não existirem (opcional, se seu SDF não tiver coordenadas 3D)
+        # Gera coordenadas 3D se não existirem (opcional)
         if not mol.GetNumConformers():
             AllChem.Compute2DCoords(mol)
             AllChem.EmbedMolecule(mol)
-            AllChem.UFFOptimizeMolecule(mol)  # Otimização UFF; alternativa: otimização MMFF
+            AllChem.UFFOptimizeMolecule(mol)   
 
     # Converte para MolBlock
     molblock = Chem.MolToMolBlock(mol)
 
     return JsonResponse({"molblock": molblock})
-
-def get_SDF_files(request, filename):
-    file_path = os.path.join(settings.BASE_DIR, filename)
-    print("oiiiii", file_path)
-    if os.path.exists(file_path):
-        return FileResponse(open(file_path, 'rb'), as_attachment=True)
-    else:
-        return HttpResponseNotFound("O arquivo não foi encontrado.")
+ 

@@ -4,16 +4,72 @@
 
 <head>
     <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Resultado da Comparação de Similaridade</title>
 </head>
 
-<body>
-    <h1>Resultado da Comparação de Similaridade</h1>
-    <ul>
-        {% for similarity, similaridade_obj in similarities_with_ids %}
-            <p>Molécula ID: {{ similaridade_obj.id }} - Similaridade: {{ similarity }}</p>
-        {% endfor %}
-        </ul>
+<body class="bg-blue-100">
+    {% include 'galeria/partials/_menu.html' %}
+    <h1 class="text-3xl text-center font-bold mb-6 mt-5">Similarity Comparison Result</h1>
+    <div class="flex justify-center">
+        <div class="w-full max-w-4xl bg-white rounded-lg shadow-md p-4">
+            <table class="w-full table-fixed border-collapse">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="border w-1/2 px-4 py-2 text-center">Molecule ID</th>
+                        <th class="border w-1/2 px-4 py-2 text-center">Similarity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for similarity, similarity_percentage, similaridade_obj in similarities_with_ids %}
+                    <tr>
+                        <td class="border px-4 py-2 text-center">
+                            <a href="{% url 'imagem' similaridade_obj.id %}" class="text-blue-400 hover:text-blue-600" >{{ similaridade_obj.id }}</a>
+                        </td>
+                        <td class="border px-4 py-2 text-center">{{ similarity_percentage }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        document.getElementById('navbar-toggle').addEventListener('click', function () {
+    var el = document.getElementById('navbar-default');
+    if (el.classList.contains('hidden')) {
+        el.classList.remove('hidden');
+    } else {
+        el.classList.add('hidden');
+    }
+});
+
+// Toggle para os dropdowns
+var dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+dropdownToggles.forEach(function (toggle) {
+    toggle.addEventListener('click', function (event) {
+        var dropdownMenu = toggle.nextElementSibling;
+        if (dropdownMenu.classList.contains('hidden')) {
+            dropdownMenu.classList.remove('hidden');
+            dropdownMenu.classList.add('block');
+        } else {
+            dropdownMenu.classList.remove('block');
+            dropdownMenu.classList.add('hidden');
+        }
+
+        // Fecha todos os outros dropdowns
+        document.querySelectorAll('.dropdown-menu').forEach(function (menu) {
+            if (menu !== dropdownMenu) {
+                menu.classList.remove('block');
+                menu.classList.add('hidden');
+            }
+        });
+
+        // Impede que o link navegue para o href="#"
+        event.preventDefault();
+    });
+});
+</script>
 </body>
+{% include 'galeria/partials/_footer.html' %}
 
 </html>

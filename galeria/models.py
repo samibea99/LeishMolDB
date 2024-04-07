@@ -11,8 +11,8 @@ class similaridade(models.Model):
     ]
 
     id = models.BigAutoField(auto_created=True, primary_key=True) 
-    nome = models.CharField(max_length=20, blank=False, default='')
-    smile = models.CharField(max_length=100)
+    nome = models.CharField(max_length=100, blank=False, default='')
+    smile = models.CharField(max_length=300)
     categoria = models.CharField(max_length=100, choices=OPCOES_CATEGORIA, default='')
     sdf = models.FileField(upload_to='sdfs/')
     url = models.URLField(blank=True, null=True)

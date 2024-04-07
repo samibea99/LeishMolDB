@@ -1,102 +1,263 @@
 {% load static %}
 
-<!-- molecules.html -->
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="{% static '/styles/style.css' %}">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-        <title>Buscar</title>
-    </head>
-    <body>
-        <nav class="navbar bg-dark text-black navbar-dark opacity-30 navbar-expand-sm sticky-top">
-            <div class="container">
-                <a href="" class="navbar-brand d-flex align-items-center">LABQFC</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
-                    <span class="navbar-toggler-icon"> </span>
-                </button>
-                <div class="navbar-collapse" id="menuNavbar">
-                    <div class="navbar-nav ms-auto">
-                        <a href="{% url 'index' %}" class="nav-link">HOME</a>
-                        <a href="{% url 'moleculas' %}" class="nav-link">MOLÉCULAS</a>
-                        <a href="http://localhost/novoprojeto/login.php" class="nav-link">LOGIN</a>
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">SAIBA MAIS</a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                                <a href="https://www.ufrn.br/" target="_blank" class="dropdown-item">Portal UFRN</a>
-                            </li>
-                            <li>
-                                <a href="#" class="dropdown-item">LABQFC</a>
-                            </li>
-                        </ul>
-                    </div>
-    
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Busca</title>
+</head>
+
+<body class="bg-blue-100">
+    <nav class="bg-gray-800 text-white relative flex items-center justify-between h-19 px-4 py-0">
+        <div class="container flex flex-wrap justify-between items-center mx-auto">
+            <a href="" class="flex items-center">
+                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">LABQFC</span>
+            </a>
+            <button class="inline-flex items-center p-2 ml-3 text-sm text-gray-400 rounded-lg md:hidden"
+                id="navbar-toggle">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul
+                    class="flex items-center flex-col p-4  bg-gray-800 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-none">
+                    <li>
+                        <a href="{% url 'index' %}" class="block pr-4 pl-3 text-white rounded md:bg-transparent md:p-0"
+                            aria-current="page">HOME</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'moleculas' %}"
+                            class="block pr-4 pl-3 text-white rounded md:bg-transparent md:p-0">MOLÉCULAS</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'comparar' %}"
+                            class="block pr-4 pl-3 text-white rounded md:bg-transparent md:p-0">COMPARAR</a>
+                    </li>
+                    <li class="relative">
+                        <a href="#" class="block pr-4 pl-3 text-white rounded md:bg-transparent md:p-0 dropdown-toggle" id="navbar-dropdown-toggle">MORE</a>
+                        <div class="dropdown-menu hidden">
+                            <a href="https://ufrn.br/" class="block pr-4 pl-3 text-black rounded md:bg-transparent md:p-0 text-center">Portal UFRN</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="bg-blue-100 py-4 ml-0.5 mt-10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row justify-between items-center gap-6">
+            <div class="flex items-center space-x-4">
+                <div class="flex space-x-2">
+                    <a href="{% url 'buscar' %}?categoria=Synthetic"
+                        class="px-3 py-1 bg-white text-gray-800 rounded-md shadow hover:bg-gray-100">Synthetic</a>
+                    <a href="{% url 'buscar' %}?categoria=Natural"
+                        class="px-3 py-1 bg-white text-gray-800 rounded-md shadow hover:bg-gray-100">Natural</a>
+                    <a href="{% url 'buscar' %}?categoria=Drug"
+                        class="px-3 py-1 bg-white text-gray-800 rounded-md shadow hover:bg-gray-100">Drug</a>
                 </div>
             </div>
-        </nav>
-        <div class="busca__fundo">
-            <form action="{% url 'buscar' %}">
-                <input class="busca__input" type="text" name="buscar" placeholder="O que você procura?">
-                <button type="submit">
-                    <img class="busca__icone" src="{% static '/assets/ícones/1x/search.png' %}" alt="ícone de search">
+            <div class="flex items-center bg-white shadow rounded-md">
+                <form action="{% url 'buscar' %}" class="flex">
+                    <input class="p-2 text-gray-800 rounded-l-md focus:outline-none" type="text" name="buscar"
+                        placeholder="Search" />
+                    <button type="submit" class="px-4 rounded-r-md text-blue-500 hover:text-blue-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-4.35-4.35m0 0a9 9 0 11-12.7-12.7 9 9 0 0112.7 12.7z" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <form action="{% url 'ordenar_moleculas' %}" method="get" class="flex items-center space-x-2 ml-0.5">
+                <select name="ordenacao"
+                    class="bg-white border border-gray-300 text-gray-700 h-10 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-blue-500">
+                    <option value="nome">Order by ID</option>
+                    <option value="peso_molecular">Order by Molecular Weight</option>
+                    <option value="logp">Order by LogP</option>
+                </select>
+                <button type="submit"
+                    class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-700">
+                    Order
                 </button>
             </form>
         </div>
-
-        <section class="tags">
-            <p class="tags__titulo">Busque por tags:</p>
-            <ul class="tags__lista">
-                <li class="tags__tag"><a href="{% url 'buscar' %}?categoria=Synthetic">Synthetic</a></li>
-                <li class="tags__tag"><a href="{% url 'buscar' %}?categoria=Natural">Natural</a></li>
-                <li class="tags__tag"><a href="{% url 'buscar' %}?categoria=Drug">Drug</a></li>
-            </ul>
-        </section>
-            <section class="galeria">
-                <div class="cards">
-                    <h2 class="cards__titulo">Navegue pela galeria</h2>
-                    <ul class="cards__lista">
-                        {% if cards %}
-                            {% for mol in cards %}
-                                <li class="card">
-                                    <a href="{% url 'imagem' mol.id %}">
-                                        <img class="card__imagem" src="{% static '/assets/imagens/'%}{{ mol.img }}" alt="foto">
-                                    </a>
-                                    <div class="card__info">
-                                        <p class="card__titulo">{{ mol.nome }}</p>
-                                        <div class="card__texto">
-                                            <p class="card__descricao">{{ mol.categoria}}</p>
-                                            <span>
-                                                <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
-                                            </span>
-                                        </div>
-                                    </div>
-                                </li>
-                            {% endfor %}
-                        {% else %}
-                        <div class="imagem_texto">
-                           <p>Moléculas não encontradas</p>
+    </div>
+    <section class="galeria bg-blue-100 py-4 ml-0.5">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-gray-800 text-xl font-semibold mb-4">Navegue pela galeria</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+                {% if cards %}
+                {% for mol in cards %}
+                <div class="card bg-white rounded-md shadow-md max-w-xs mx-auto">
+                    <a href="{% url 'imagem' mol.id %}">
+                        <div id="molViewer_{{ mol.id }}" style="width: 200px; height: 200px; padding-top: 20px;"
+                            class="mt-1"></div>
+                    </a>
+                    <div class="p-4">
+                        <p class="text-gray-800 font-semibold text-lg" style="word-break: break-word;">{{ mol.nome }}
+                        </p>
+                        <div class="flex justify-between items-center mt-2">
+                            <p class="text-gray-600 text-sm">{{ mol.categoria }}</p>
+                            <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração"
+                                class="w-6 h-6">
                         </div>
-                        {% endif %}
-                    </ul>
+                    </div>
                 </div>
-            </section>
+                {% endfor %}
+                {% else %}
+                <div class="imagem_texto text-gray-800">
+                    <p>Moléculas não encontradas</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    <div class="flex justify-center items-center space-x-2 my-8">
+        {% if cards.has_previous %}
+            <a href="?page=1" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Primeira</a>
+            <a href="?page={{ cards.previous_page_number }}" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" rel="prev">Anterior</a>
+        {% endif %}
+    
+        <span class="px-4 py-2 text-sm font-medium text-blue-600 bg-white rounded-md shadow">
+            Página {{ cards.number }} de {{ cards.paginator.num_pages }}
+        </span>
+    
+        {% if cards.has_next %}
+            <a href="?page={{ cards.next_page_number }}" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" rel="next">Próxima</a>
+            <a href="?page={{ cards.paginator.num_pages }}" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Última</a>
+        {% endif %}
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js">
         integrity = "sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin = "anonymous" 
     </script>
-</body>
-<footer class="rodape">
-    <div class="rodape__icones">
-        <a href="#" target=”_blank” >
-            <img src="{% static '/assets/ícones/1x/twitter.png' %}" alt="ícone twitter">
-        </a>
-        <a href="#" target=”_blank” >
-            <img src="{% static '/assets/ícones/1x/instagram.png' %}" alt="ícone instagram">
-        </a>
-    </div>
-    <p class="rodape__texto">Desenvolvido por LABQFC</p>
-</footer>
-</html>
+    <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> <!-- Se jQuery não estiver incluído -->
+    <script>
+        // Função para inicializar o visualizador
+        function initialize3Dmol(id) {
+            var viewerElement = $(`#molViewer_${id}`);
 
+            // Verifica se o elemento está na viewport e se ainda não foi carregado
+            if (isInViewport(viewerElement[0]) && !viewerElement.data('loaded')) {
+                var viewer = $3Dmol.createViewer(viewerElement, {
+                    defaultcolors: $3Dmol.rasmolElementColors
+                });
+
+                $.get('{% url "get_molecule_data" %}?id=' + id, function (data) {
+                    viewer.addModel(data.molblock, "sdf");
+                    viewer.setStyle({}, { stick: {} });
+                    viewer.zoomTo();
+                    viewer.render();
+                }, 'json');
+
+                // Marca o viewer como carregado para evitar recarregamentos
+                viewerElement.data('loaded', true);
+            }
+        }
+
+        // Chamada após o carregamento da página
+        $(document).ready(function () {
+            {% for mol in cards %}
+            initialize3Dmol({{ mol.id }});
+        {% endfor %}
+    });
+
+        function isInViewport(element) {
+            var rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function loadMoleculeIfVisible(id) {
+            var element = $(`#molViewer_${id}`);
+            if (isInViewport(element[0])) {
+                if (!element.data('loaded')) {
+                    initialize3Dmol(id);
+                }
+            } else {
+                // Se não está na viewport, remove a propriedade 'loaded'
+                element.removeData('loaded');
+            }
+        }
+
+        // Chamada após o carregamento da página
+        $(document).ready(function () {
+            {% for mol in cards %}
+            loadMoleculeIfVisible({{ mol.id }});
+        {% endfor %}
+    });
+
+        // Verificar a visibilidade durante a rolagem
+        $(window).on('scroll', function () {
+            {% for mol in cards %}
+            loadMoleculeIfVisible({{ mol.id }});
+        {% endfor %}
+    });
+        document.getElementById('navbar-toggle').addEventListener('click', function () {
+            var el = document.getElementById('navbar-default');
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+            } else {
+                el.classList.add('hidden');
+            }
+        });
+
+        // Toggle para os dropdowns
+        var dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+        dropdownToggles.forEach(function (toggle) {
+            toggle.addEventListener('click', function (event) {
+                var dropdownMenu = toggle.nextElementSibling;
+                if (dropdownMenu.classList.contains('hidden')) {
+                    dropdownMenu.classList.remove('hidden');
+                    dropdownMenu.classList.add('block');
+                } else {
+                    dropdownMenu.classList.remove('block');
+                    dropdownMenu.classList.add('hidden');
+                }
+
+                // Fecha todos os outros dropdowns
+                document.querySelectorAll('.dropdown-menu').forEach(function (menu) {
+                    if (menu !== dropdownMenu) {
+                        menu.classList.remove('block');
+                        menu.classList.add('hidden');
+                    }
+                });
+
+                // Impede que o link navegue para o href="#"
+                event.preventDefault();
+            });
+        });
+
+    </script>
+</body>
+<footer class="bg-gray-800 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="flex">
+            <a href="#" target="_blank" class="mx-2">
+                <img src="{% static '/assets/ícones/1x/twitter.png' %}" alt="ícone twitter"
+                    class="filter invert w-6 h-6">
+            </a>
+            <a href="#" target="_blank" class="mx-2">
+                <img src="{% static '/assets/ícones/1x/instagram.png' %}" alt="ícone instagram"
+                    class="filter invert w-6 h-6">
+            </a>
+        </div>
+        <p>Developed by LABQFC</p>
+    </div>
+</footer>
+
+</html>
