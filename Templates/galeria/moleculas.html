@@ -12,16 +12,16 @@
 </head>
 
 <body class="bg-blue-100">
-{% include 'galeria/partials/_menu.html' %}
+    {% include 'galeria/partials/_menu.html' %}
     <div class="bg-blue-100 py-4 ml-0.5 mt-10">
         <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row justify-between items-center gap-6">
             <div class="flex items-center space-x-4">
                 <div class="flex space-x-2">
-                    <a href="{% url 'buscar' %}?categoria=Synthetic"
+                    <a href="{% url 'buscar' %}?categoria=Synthetic{% if ordenacao %}&ordenacao={{ ordenacao }}{% endif %}"
                         class="px-3 py-1 bg-white text-gray-800 rounded-md shadow hover:bg-gray-100">Synthetic</a>
-                    <a href="{% url 'buscar' %}?categoria=Natural"
+                    <a href="{% url 'buscar' %}?categoria=Natural{% if ordenacao %}&ordenacao={{ ordenacao }}{% endif %}"
                         class="px-3 py-1 bg-white text-gray-800 rounded-md shadow hover:bg-gray-100">Natural</a>
-                    <a href="{% url 'buscar' %}?categoria=Drug"
+                    <a href="{% url 'buscar' %}?categoria=Drug{% if ordenacao %}&ordenacao={{ ordenacao }}{% endif %}"
                         class="px-3 py-1 bg-white text-gray-800 rounded-md shadow hover:bg-gray-100">Drug</a>
                 </div>
             </div>
@@ -39,6 +39,9 @@
                 </form>
             </div>
             <form action="{% url 'ordenar_moleculas' %}" method="get" class="flex items-center space-x-2 ml-0.5">
+                {% if categoria %}
+                <input type="hidden" name="categoria" value="{{ categoria }}">
+                {% endif %}
                 <select name="ordenacao"
                     class="bg-white border border-gray-300 text-gray-700 h-10 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-blue-500">
                     <option value="nome">Order by ID</option>
@@ -84,18 +87,25 @@
     </section>
     <div class="flex justify-center items-center space-x-2 my-8">
         {% if cards.has_previous %}
-            <a href="?page=1" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Primeira</a>
-            <a href="?page={{ cards.previous_page_number }}" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" rel="prev">Anterior</a>
+        <a href="?page=1"
+            class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Primeira</a>
+        <a href="?page={{ cards.previous_page_number }}"
+            class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            rel="prev">Anterior</a>
         {% endif %}
-    
+
         <span class="px-4 py-2 text-sm font-medium text-blue-600 bg-white rounded-md shadow">
             Página {{ cards.number }} de {{ cards.paginator.num_pages }}
         </span>
-    
+
         {% if cards.has_next %}
-            <a href="?page={{ cards.next_page_number }}" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" rel="next">Próxima</a>
-            <a href="?page={{ cards.paginator.num_pages }}" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Última</a>
+        <a href="?page={{ cards.next_page_number }}"
+            class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            rel="next">Próxima</a>
+        <a href="?page={{ cards.paginator.num_pages }}"
+            class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Última</a>
         {% endif %}
+    </div>
     </div>
     </div>
     </div>
@@ -207,13 +217,11 @@
 <footer class="bg-gray-800 text-white p-4">
     <div class="container mx-auto flex justify-between items-center">
         <div class="flex">
-            <a href="#" target="_blank" class="mx-2">
-                <img src="{% static '/assets/ícones/1x/twitter.png' %}" alt="ícone twitter"
-                    class="filter invert w-6 h-6">
+            <a href="https://www.instagram.com/euzebio_labqfc?igsh=M2pvazVleWYwbnJ4" target="_blank" class="mx-2">
+                <img src="{% static '/assets/ícones/instagram.png' %}" alt="ícone instagram" class="w-5 h-5">
             </a>
-            <a href="#" target="_blank" class="mx-2">
-                <img src="{% static '/assets/ícones/1x/instagram.png' %}" alt="ícone instagram"
-                    class="filter invert w-6 h-6">
+            <a href="mailto:euzebiogb@gmail.com" target="_blank" class="mx-2">
+                <img src="{% static '/assets/ícones/email.png' %}" alt="ícone email" class="w-5 h-5">
             </a>
         </div>
         <p>Developed by LABQFC</p>

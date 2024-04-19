@@ -13,54 +13,16 @@
 </head>
 
 <body class="bg-blue-100">
-    <nav class="bg-gray-800 text-white relative flex items-center justify-between h-19 px-4 py-0">
-        <div class="container flex flex-wrap justify-between items-center mx-auto">
-            <a href="" class="flex items-center">
-                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">LABQFC</span>
-            </a>
-            <button class="inline-flex items-center p-2 ml-3 text-sm text-gray-400 rounded-lg md:hidden"
-                id="navbar-toggle">
-                <span class="sr-only">Open main menu</span>
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
-                    </path>
-                </svg>
-            </button>
-            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                <ul
-                    class="flex items-center flex-col p-4  bg-gray-800 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-none">
-                    <li>
-                        <a href="{% url 'index' %}" class="block pr-4 pl-3 text-white rounded md:bg-transparent md:p-0"
-                            aria-current="page">HOME</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'moleculas' %}"
-                            class="block pr-4 pl-3 text-white rounded md:bg-transparent md:p-0">MOLÉCULAS</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'comparar' %}"
-                            class="block pr-4 pl-3 text-white rounded md:bg-transparent md:p-0">COMPARAR</a>
-                    </li>
-                    <li class="relative">
-                        <a href="#" class="block pr-4 pl-3 text-white rounded md:bg-transparent md:p-0 dropdown-toggle" id="navbar-dropdown-toggle">MORE</a>
-                        <div class="dropdown-menu hidden">
-                            <a href="https://ufrn.br/" class="block pr-4 pl-3 text-black rounded md:bg-transparent md:p-0 text-center">Portal UFRN</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    {% include 'galeria/partials/_menu.html' %}
     <div class="bg-blue-100 py-4 ml-0.5 mt-10">
         <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row justify-between items-center gap-6">
             <div class="flex items-center space-x-4">
                 <div class="flex space-x-2">
-                    <a href="{% url 'buscar' %}?categoria=Synthetic"
+                    <a href="{% url 'buscar' %}?categoria=Synthetic{% if ordenacao %}&ordenacao={{ ordenacao }}{% endif %}"
                         class="px-3 py-1 bg-white text-gray-800 rounded-md shadow hover:bg-gray-100">Synthetic</a>
-                    <a href="{% url 'buscar' %}?categoria=Natural"
+                    <a href="{% url 'buscar' %}?categoria=Natural{% if ordenacao %}&ordenacao={{ ordenacao }}{% endif %}"
                         class="px-3 py-1 bg-white text-gray-800 rounded-md shadow hover:bg-gray-100">Natural</a>
-                    <a href="{% url 'buscar' %}?categoria=Drug"
+                    <a href="{% url 'buscar' %}?categoria=Drug{% if ordenacao %}&ordenacao={{ ordenacao }}{% endif %}"
                         class="px-3 py-1 bg-white text-gray-800 rounded-md shadow hover:bg-gray-100">Drug</a>
                 </div>
             </div>
@@ -77,13 +39,17 @@
                     </button>
                 </form>
             </div>
-            <form action="{% url 'ordenar_moleculas' %}" method="get" class="flex items-center space-x-2 ml-0.5">
+            <form action="{% url 'buscar' %}" method="get" class="flex items-center space-x-2 ml-0.5">
                 <select name="ordenacao"
                     class="bg-white border border-gray-300 text-gray-700 h-10 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-blue-500">
                     <option value="nome">Order by ID</option>
                     <option value="peso_molecular">Order by Molecular Weight</option>
                     <option value="logp">Order by LogP</option>
                 </select>
+                <!-- Manter o parâmetro de categoria -->
+                {% if categoria %}
+                <input type="hidden" name="categoria" value="{{ categoria }}">
+                {% endif %}
                 <button type="submit"
                     class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-700">
                     Order
@@ -123,17 +89,23 @@
     </section>
     <div class="flex justify-center items-center space-x-2 my-8">
         {% if cards.has_previous %}
-            <a href="?page=1" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Primeira</a>
-            <a href="?page={{ cards.previous_page_number }}" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" rel="prev">Anterior</a>
+        <a href="?page=1&categoria={{ categoria }}&ordenacao={{ ordenacao }}&buscar={{ buscar }}"
+            class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Primeira</a>
+        <a href="?page={{ cards.previous_page_number }}&categoria={{ categoria }}&ordenacao={{ ordenacao }}&buscar={{ buscar }}"
+            class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            rel="prev">Anterior</a>
         {% endif %}
-    
+
         <span class="px-4 py-2 text-sm font-medium text-blue-600 bg-white rounded-md shadow">
             Página {{ cards.number }} de {{ cards.paginator.num_pages }}
         </span>
-    
+
         {% if cards.has_next %}
-            <a href="?page={{ cards.next_page_number }}" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" rel="next">Próxima</a>
-            <a href="?page={{ cards.paginator.num_pages }}" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Última</a>
+        <a href="?page={{ cards.next_page_number }}&categoria={{ categoria }}&ordenacao={{ ordenacao }}&buscar={{ buscar }}"
+            class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            rel="next">Próxima</a>
+        <a href="?page={{ cards.paginator.num_pages }}&categoria={{ categoria }}&ordenacao={{ ordenacao }}&buscar={{ buscar }}"
+            class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Última</a>
         {% endif %}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js">
@@ -247,13 +219,11 @@
 <footer class="bg-gray-800 text-white p-4">
     <div class="container mx-auto flex justify-between items-center">
         <div class="flex">
-            <a href="#" target="_blank" class="mx-2">
-                <img src="{% static '/assets/ícones/1x/twitter.png' %}" alt="ícone twitter"
-                    class="filter invert w-6 h-6">
+            <a href="https://www.instagram.com/euzebio_labqfc?igsh=M2pvazVleWYwbnJ4" target="_blank" class="mx-2">
+                <img src="{% static '/assets/ícones/instagram.png' %}" alt="ícone instagram" class="w-5 h-5">
             </a>
-            <a href="#" target="_blank" class="mx-2">
-                <img src="{% static '/assets/ícones/1x/instagram.png' %}" alt="ícone instagram"
-                    class="filter invert w-6 h-6">
+            <a href="mailto:euzebiogb@gmail.com" target="_blank" class="mx-2">
+                <img src="{% static '/assets/ícones/email.png' %}" alt="ícone email" class="w-5 h-5">
             </a>
         </div>
         <p>Developed by LABQFC</p>

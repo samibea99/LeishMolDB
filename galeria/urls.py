@@ -15,5 +15,4 @@ urlpatterns = [
     path('download_sdfs/', views.download_sdfs, name='download_sdfs'),
     path('moleculas/ordenar/', ordenar_moleculas_view, name='ordenar_moleculas'),
     path('api/get_mol_data/<int:id>/', views.get_mol_data, name='api_get_mol'),
-    path('teste/', views.exemplo_molecula_view, name='teste'),
 ] 
