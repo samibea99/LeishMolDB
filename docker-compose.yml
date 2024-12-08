@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  # Serviço para o Django
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    expose:
+      - "8000" # Expõe a porta interna para comunicação com Nginx
+    environment:
+      - DEBUG=False
+
+  # Serviço para o Nginx
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf # Seu arquivo de configuração do Nginx
+      - .:/app # Para que o Nginx tenha acesso aos arquivos estáticos
+    ports:
+      - "80:80" # Mapear a porta 80 para a máquina local
+    depends_on:
+      - web
