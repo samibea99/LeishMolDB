@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados da Busca Farmacofórica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    {% include 'galeria/partials/_menu.html' %}
+    <main class="flex-grow pb-20">
+        <div class="container mx-auto px-4 py-8 mt-5">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800">Resultados da Busca Farmacofórica</h2>
+                    <p class="mt-2 text-gray-600">
+                        Resultados para a molécula modelo: <strong>{{ query_name }}</strong>
+                    </p>
+                    <a href="{% url 'pharmacophore_search' %}" class="mt-4 inline-block text-blue-600 hover:underline">← Fazer Nova Busca</a>
+                </div>
+
+                <hr class="my-8">
+
+                <section class="galeria">
+                    <div class="max-w-7xl mx-auto px-6">
+                        {% if results %}
+                            <h3 class="text-gray-800 text-xl font-semibold mb-4">
+                                {{ results|length }} molécula(s) encontrada(s) com similaridade farmacofórica ≥ {{ threshold }}
+                            </h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+                                {% for result in results %}
+                                
+                                <div class="card bg-white rounded-md shadow-md max-w-xs mx-auto border flex flex-col h-full">
+                                    <a href="{% url 'imagem' result.mol.id %}" class="flex-grow flex items-center justify-center p-2">
+                                        <img src="{% url 'molecule_2d_image' result.mol.id %}" alt="Estrutura 2D de {{ result.mol.nome }}" class="max-w-full max-h-full object-contain">
+                                    </a>
+                                    <div class="p-4 border-t border-gray-200">
+                                        <p class="text-gray-800 font-semibold text-base truncate" title="{{ result.mol.nome }}">{{ result.mol.nome }}</p>
+                                        <div class="mt-2">
+                                            <p class="text-gray-600 text-sm">Similaridade: 
+                                                <span class="font-bold text-blue-600">{{ result.similarity|floatformat:3 }}</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <div class="text-center text-gray-500 py-10">
+                                <p class="text-lg">Nenhuma molécula encontrada com similaridade farmacofórica suficiente.</p>
+                                <p>Tente com outra molécula modelo ou com um limiar de similaridade mais baixo.</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+    
+    {% include 'galeria/partials/_footer.html' %}
+</body>
+</html>

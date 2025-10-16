@@ -1,0 +1,59 @@
+{% load static %}
+<nav class="bg-gray-800">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div class="relative flex items-center justify-between h-16">
+            
+            <div class="flex-shrink-0">
+                <a href="{% url 'index' %}" class="text-white text-xl font-bold">LeishMolDB</a>
+            </div>
+
+            <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
+                <button type="button" id="navbar-toggle" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                    <span class="sr-only">Abrir menu principal</span>
+                    <svg class="block h-6 w-6" id="icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                    <svg class="hidden h-6 w-6" id="icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="hidden sm:block sm:ml-6">
+                <div class="flex space-x-4">
+                    <a href="{% url 'moleculas' %}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Galeria</a>
+                    <a href="{% url 'comparar' %}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Similaridade 2D</a>
+                    <a href="{% url 'resultado_3d' %}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Similaridade 3D</a>
+                    <a href="{% url 'pharmacophore_search' %}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Busca Farmacofórica</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sm:hidden hidden" id="navbar-default">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="{% url 'moleculas' %}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Galeria</a>
+            <a href="{% url 'comparar' %}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Similaridade 2D</a>
+            <a href="{% url 'resultado_3d' %}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Similaridade 3D</a>
+            <a href="{% url 'pharmacophore_search' %}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Busca Farmacofórica</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleButton = document.getElementById('navbar-toggle');
+        const menu = document.getElementById('navbar-default');
+        const iconOpen = document.getElementById('icon-open');
+        const iconClose = document.getElementById('icon-close');
+
+        if (toggleButton && menu && iconOpen && iconClose) {
+            toggleButton.addEventListener('click', function() {
+                menu.classList.toggle('hidden');
+                iconOpen.classList.toggle('hidden');
+                iconClose.classList.toggle('hidden');
+            });
+        }
+    });
+</script>

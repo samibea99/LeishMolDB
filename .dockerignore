@@ -1,0 +1,13 @@
+# Ambientes virtuais do Conda e venv
+leishmol/
+leishmol_novo/
+venv/
+.venv/
+
+# Cache do Python
+__pycache__/
+*.pyc
+
+# Arquivos do Git e VSCode
+.git/
+.vscode/

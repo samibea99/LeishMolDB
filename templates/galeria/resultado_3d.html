@@ -1,0 +1,266 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado do Alinhamento Molecular 3D</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://3dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+</head>
+
+<body class="bg-gray-100">
+    {% include 'galeria/partials/_menu.html' %}
+    <main class="flex-grow pb-20">
+        <div class="container mx-auto px-4 py-8 mt-5">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="mb-8">
+                    <h2 class="text-xl font-semibold text-center text-gray-800">Faça o upload de um arquivo .sdf ou .mol2 para ranquear e visualizar a similaridade 3D</h2>
+                    <form method="post" enctype="multipart/form-data" action="{% url 'resultado_3d' %}" class="mt-4">
+                        {% csrf_token %}
+                        <div class="flex justify-center items-center space-x-4">
+                            <label for="fileInput" class="cursor-pointer inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                                Escolher Arquivo (.sdf ou .mol2)
+                                <input type="file" id="fileInput" name="file" accept=".sdf,.mol2" class="hidden" required>
+                            </label>
+                            <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700">
+                                Enviar e Analisar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="loading-spinner" class="hidden mt-8 text-center">
+                    <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]" role="status">
+                        <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+                    </div>
+                    <p class="mt-2 text-gray-600">Realizando busca conformacional... Isso pode levar alguns minutos.</p>
+                </div>
+
+                {% if error %}
+                    <div class="my-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded text-center">
+                        <p><strong>Ocorreu um erro:</strong> {{ error|safe }}</p>
+                    </div>
+                {% endif %}
+
+                {% if results %}
+                    <hr class="my-8 border-t-2">
+                    
+                    <div class="text-center mb-10">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Visualização 3D</h3>
+                        <p id="viz-title" class="text-gray-600 mb-4">
+                            Sua molécula comparada com <strong>{{ best_mol_obj.nome }}</strong> (Rank #1).
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                                <h4 class="font-semibold text-gray-700 mb-2">Sua Molécula</h4>
+                                <div id="container-usuario" class="mx-auto" style="height: 400px; width: 100%; position: relative; border: 1px solid #ccc; border-radius: 8px;"></div>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-700 mb-2">Molécula do Banco</h4>
+                                <div id="container-db" class="mx-auto" style="height: 400px; width: 100%; position: relative; border: 1px solid #ccc; border-radius: 8px;"></div>
+                                <p id="scores-db" class="text-muted text-center text-sm mt-1">
+                                    RMSD: {{ best_match.rmsd|floatformat:3 }} | TM-score: {{ best_match.tm_score|floatformat:3 }} | Shape Tanimoto: {{ shape_tanimoto|floatformat:3 }} | Pharm. Tanimoto: {{ pharm_similarity|floatformat:3 }}
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-700 mb-2">Alinhamento</h4>
+                                <div id="container-alinhamento" class="mx-auto" style="height: 400px; width: 100%; position: relative; border: 1px solid #ccc; border-radius: 8px;"></div>
+                                
+                                {% if show_conformer_alert %}
+                                <div class="mt-2 text-xs text-center text-gray-500 bg-yellow-100 p-2 rounded">
+                                    <p><b>Aviso:</b> A conformação da sua molécula (vermelha) exibida no alinhamento é a que gerou o melhor score na busca, e pode ser diferente da estrutura original.</p>
+                                    <a href="{% url 'download_conformer' %}?path={{ session_id_for_download }}/{{ best_conformer_relative_path }}" 
+                                       class="text-blue-600 hover:underline font-semibold"
+                                       download>
+                                       Baixar SDF desta conformação
+                                    </a>
+                                </div>
+                                {% endif %}
+
+                                <div class="mt-2 text-sm text-gray-600 inline-flex space-x-4 justify-center">
+                                    <p><span style="color: #4A90E2;">■</span> Banco</p>
+                                    <p><span style="color: #D0021B;">■</span> Sua</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center mt-12">Top 50 Moléculas Mais Similares</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white border">
+                             <thead>
+                                <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                                    <th class="py-3 px-6 text-left">Rank</th>
+                                    <th class="py-3 px-6 text-left">Estrutura 2D</th>
+                                    <th class="py-3 px-6 text-left">Nome (Banco de Dados)</th>
+                                    <th class="py-3 px-6 text-center">RMSD</th>
+                                    <th class="py-3 px-6 text-center">TM-Score</th>
+                                    <th class="py-3 px-6 text-center">Alertas</th>
+                                    <th class="py-3 px-6 text-center">Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-600 text-sm font-light">
+                                {% for result in results %}
+                                    <tr id="row-{{ result.id }}"
+                                        {% if result.is_pains %} class="border-b border-gray-200 bg-purple-200 hover:bg-purple-300"
+                                        {% elif result.tm_score > 0.5 %} class="border-b border-gray-200 bg-green-100 hover:bg-green-200"
+                                        {% elif result.tm_score > 0.4 %} class="border-b border-gray-200 bg-yellow-100 hover:bg-yellow-200"
+                                        {% else %} class="border-b border-gray-200 bg-red-100 hover:bg-red-200"
+                                        {% endif %}>
+                                        <td class="py-3 px-6 text-left whitespace-nowrap">{{ forloop.counter }}</td>
+                                        <td class="py-1 px-2 text-center">
+                                            <img src="{% url 'molecule_2d_image' result.id %}" alt="Estrutura 2D de {{ result.nome }}" width="150" height="150">
+                                        </td>
+                                        <td class="py-3 px-6 text-left">
+                                            {% if result.url %}<a href="{{ result.url }}" target="_blank" class="text-blue-600 hover:underline">{{ result.nome }}</a>{% else %}{{ result.nome }}{% endif %}
+                                        </td>
+                                        <td class="py-3 px-6 text-center font-mono">{{ result.rmsd|floatformat:4 }}</td>
+                                        <td class="py-3 px-6 text-center font-mono">{{ result.tm_score|floatformat:4 }}</td>
+                                        <td class="py-3 px-6 text-center font-bold">
+                                            <div class="flex justify-center space-x-2">
+                                                {% if result.is_pains %}
+                                                    <span class="text-red-700" title="ALERTA: Esta molécula contém uma subestrutura PAINS.">☣️</span>
+                                                {% endif %}
+                                                {% if result.lipinski_violations > 0 %}
+                                                    <span class="text-orange-600" title="{{ result.lipinski_violations }} violação(ões) da Regra de Lipinski">🚩 {{ result.lipinski_violations }}</span>
+                                                {% else %}
+                                                    {% if not result.is_pains %}
+                                                        <span class="text-green-600" title="Passou nos filtros de Lipinski e PAINS">✔️</span>
+                                                    {% endif %}
+                                                {% endif %}
+                                            </div>
+                                        </td>
+                                        <td class="py-3 px-6 text-center">
+                                            <button 
+                                                class="visualize-btn bg-purple-500 hover:bg-purple-700 text-white text-xs font-bold py-1 px-2 rounded"
+                                                data-db-mol-id="{{ result.id }}"
+                                                data-rank="{{ forloop.counter }}"
+                                                data-rmsd="{{ result.rmsd|floatformat:3 }}"
+                                                data-tmscore="{{ result.tm_score|floatformat:3 }}">
+                                                Visualizar
+                                            </button>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+    
+    {% if results %}
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let viewerUser, viewerDB, viewerAlign;
+        const config = { backgroundColor: 'white' };
+        const userOriginalContent = `{{ conteudo_molecula_original|escapejs }}`;
+
+        function updateSingleViewer(viewer, containerId, sdfContent, style) {
+            if (!viewer) viewer = $3Dmol.createViewer(document.getElementById(containerId), config);
+            viewer.clear();
+            viewer.addModel(sdfContent, 'sdf');
+            viewer.setStyle({}, style);
+            viewer.zoomTo();
+            viewer.render();
+            return viewer;
+        }
+
+        function updateAlignmentView(userSDF, dbSDF, combinedAlignedSDF, dbMCSIndices, userMCSIndices) {
+            viewerUser = updateSingleViewer(viewerUser, 'container-usuario', userSDF, { stick: {} });
+            viewerDB = updateSingleViewer(viewerDB, 'container-db', dbSDF, { stick: { colorscheme: 'blueCarbon' } });
+
+            if (!viewerAlign) viewerAlign = $3Dmol.createViewer(document.getElementById('container-alinhamento'), config);
+            viewerAlign.clear();
+            
+            const sdfBlocks = combinedAlignedSDF.split('$$$$').filter(block => block.trim() !== '');
+
+            if (sdfBlocks.length >= 2) {
+                viewerAlign.addModel(sdfBlocks[0], 'sdf');
+                viewerAlign.addModel(sdfBlocks[1], 'sdf');
+
+                // Estilo padrão para as partes NÃO comuns
+                viewerAlign.setStyle({ model: 0 }, { stick: { colorscheme: 'blueCarbon' } });
+                viewerAlign.setStyle({ model: 1 }, { stick: { colorscheme: 'redCarbon' } });
+                
+                // =================== ALTERAÇÃO FINAL NA ESTILIZAÇÃO ===================
+                //
+                // Se houver índices de MCS, aplicamos um novo estilo de 'stick' verde
+                // apenas sobre esses átomos. Isso vai sobrescrever a cor azul/vermelha
+                // e criar o efeito de destaque que queremos.
+                //
+                const highlightStyle = { stick: { color: 'limegreen' } };
+                
+                if (dbMCSIndices && dbMCSIndices.length > 0) {
+                    viewerAlign.setStyle({ model: 0, index: dbMCSIndices }, highlightStyle);
+                }
+                if (userMCSIndices && userMCSIndices.length > 0) {
+                    viewerAlign.setStyle({ model: 1, index: userMCSIndices }, highlightStyle);
+                }
+                // =====================================================================
+
+            } else {
+                viewerAlign.addModel(combinedAlignedSDF, 'sdf');
+                viewerAlign.setStyle({}, { stick: {} });
+            }
+            
+            viewerAlign.zoomTo();
+            viewerAlign.render();
+        }
+
+        const dbOriginalContent_Rank1 = `{{ conteudo_molecula_db|escapejs }}`;
+        const alignedContent_Rank1 = `{{ conteudo_molecula_alinhada|escapejs }}`;
+        const dbMCSIndices_Rank1 = {{ db_mcs_indices|safe }};
+        const userMCSIndices_Rank1 = {{ user_mcs_indices|safe }};
+        
+        if (userOriginalContent && dbOriginalContent_Rank1 && alignedContent_Rank1) {
+            updateAlignmentView(userOriginalContent, dbOriginalContent_Rank1, alignedContent_Rank1, dbMCSIndices_Rank1, userMCSIndices_Rank1);
+        }
+
+        document.querySelectorAll('.visualize-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // ... (o código para a chamada fetch da API permanece o mesmo)
+                const dbMolId = this.dataset.dbMolId;
+                const rank = this.dataset.rank;
+                const userSdfPath = "{{ user_sdf_path_for_api|escapejs }}";
+                const vizTitle = document.getElementById('viz-title');
+                const scoresDB = document.getElementById('scores-db');
+                
+                vizTitle.innerHTML = `Carregando alinhamento para Rank #${rank}...`;
+                scoresDB.innerHTML = 'Calculando...';
+                
+                const apiUrl = `/api/get_alignment/?user_sdf_path=${encodeURIComponent(userSdfPath)}&db_mol_id=${dbMolId}`;
+                
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            updateAlignmentView(userOriginalContent, data.conteudo_molecula_db, data.conteudo_molecula_alinhada, data.db_mcs_indices, data.user_mcs_indices);
+                            vizTitle.innerHTML = `Sua molécula comparada com <strong>${data.db_mol_nome}</strong> (Rank #${rank}).`;
+                            scoresDB.innerHTML = `RMSD: ${this.dataset.rmsd} | TM-score: ${this.dataset.tmscore} | Shape Tanimoto: ${data.shape_tanimoto.toFixed(3)} | Pharm. Tanimoto: ${data.pharm_similarity.toFixed(3)}`;
+                        } else {
+                            vizTitle.innerHTML = `<span class="text-red-500">Erro: ${data.error}</span>`;
+                        }
+                    })
+                    .catch(error => {
+                        vizTitle.innerHTML = `<span class="text-red-500">Erro de comunicação.</span>`;
+                    });
+            });
+        });
+        
+        const form = document.querySelector('form[action="{% url 'resultado_3d' %}"]');
+        const spinner = document.getElementById('loading-spinner');
+        if (form && spinner) {
+            form.addEventListener('submit', function() {
+                spinner.classList.remove('hidden');
+            });
+        }
+    });
+    </script>
+    {% endif %}
+</body>
+</html>

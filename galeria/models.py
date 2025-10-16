@@ -16,6 +16,7 @@ class similaridade(models.Model):
     categoria = models.CharField(max_length=100, choices=OPCOES_CATEGORIA, default='')
     sdf = models.FileField(upload_to='sdfs/')
     url = models.URLField(blank=True, null=True)
+    pharm_fingerprint = models.BinaryField(null=True, blank=True, editable=False)
     observacoes_admin = models.TextField("Observações do Administrador", blank=True, null=True)
     publicada = models.BooleanField(default=False)
     data_mol = models.DateTimeField(default=datetime.now, blank=False)

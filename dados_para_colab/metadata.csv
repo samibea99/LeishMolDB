@@ -1,0 +1,855 @@
+id,nome,categoria,observacoes,sdf_original,sdf_novo_path
+1,AKC_1573406414666180226163222,SYNTHETIC,,1.sdf,sdfs/1.sdf
+2,AKC_1573406414666180226163222,SYNTHETIC,,2.sdf,sdfs/2.sdf
+3,AKC_1573406414666180226163222,SYNTHETIC,,3.sdf,sdfs/3.sdf
+5,AKC_1573406417666210216154428,SYNTHETIC,,5.sdf,sdfs/5.sdf
+6,AKC_1573406417666210216154428,SYNTHETIC,,6.sdf,sdfs/6.sdf
+7,AKC_1573406417666210216154428,SYNTHETIC,,7.sdf,sdfs/7.sdf
+8,AKC_1573406417666210216154428,SYNTHETIC,,8.sdf,sdfs/8.sdf
+9,AKC_1573406417666210216154428,SYNTHETIC,,9.sdf,sdfs/9.sdf
+10,AKC_ph15020148,SYNTHETIC,,10.sdf,sdfs/10.sdf
+11,AKC_AAC.37.5.991,SYNTHETIC,,11.sdf,sdfs/11.sdf
+12,AKC_AAC.37.5.991,SYNTHETIC,,12.sdf,sdfs/12.sdf
+13,AKC_AAC.37.5.991,SYNTHETIC,,13.sdf,sdfs/13.sdf
+14,AKC_j.bmcl.2021.128289,SYNTHETIC,Em estudo Jessika,14.sdf,sdfs/14.sdf
+15,AKC_j.ejmech.2007.02.010,SYNTHETIC,,15.sdf,sdfs/15.sdf
+16,AKC_j.ejmech.2007.02.010,SYNTHETIC,,16.sdf,sdfs/16.sdf
+17,AKC_AAC.02529-15,SYNTHETIC,Artigo escondeu as estruturas,17.sdf,sdfs/17.sdf
+18,AKC_AAC.02529-15,SYNTHETIC,Artigo escondeu as estruturas,18.sdf,sdfs/18.sdf
+19,AKC_AAC.02529-15,SYNTHETIC,Artigo escondeu as estruturas,19.sdf,sdfs/19.sdf
+20,AKC_AAC.02529-15,SYNTHETIC,Artigo escondeu as estruturas,20.sdf,sdfs/20.sdf
+21,AKC_j.ejmech.2015.09.002,SYNTHETIC,Achei muito legal para virtual screening,21.sdf,sdfs/21.sdf
+22,AKC_j.ejmech.2020.112956,SYNTHETIC,Achei muito legal para virtual screening,22.sdf,sdfs/22.sdf
+23,AKC_j.ejmech.2018.06.001,SYNTHETIC,Sem Alvo,23.sdf,sdfs/23.sdf
+24,AKC_j.ejmech.2012.04.029,SYNTHETIC,,24.sdf,sdfs/24.sdf
+25,AKC_j.ejmech.2012.03.003,SYNTHETIC,,25.sdf,sdfs/25.sdf
+26,AKC_j.ejmech.2012.03.003,SYNTHETIC,,26.sdf,sdfs/26.sdf
+27,AKC_j.ejmech.2012.03.003,SYNTHETIC,,27.sdf,sdfs/27.sdf
+28,AKC_j.vetpar.2016.01.002,SYNTHETIC,,28.sdf,sdfs/28.sdf
+29,AKC_j.ejmech.2013.08.028,SYNTHETIC,Sem alvo,29.sdf,sdfs/29.sdf
+30,AKC_AAC.01299-10,SYNTHETIC,Sem alvo total,30.sdf,sdfs/30.sdf
+31,AKC_c6ob01149g,SYNTHETIC,Sem alvo,31.sdf,sdfs/31.sdf
+32,AKC_j.ejmech.2009.09.012,SYNTHETIC,Tóxicos para o macrófago.,32.sdf,sdfs/32.sdf
+33,AKC_j.ejmech.2018.05.014,SYNTHETIC,Sem alvo,33.sdf,sdfs/33.sdf
+34,AKC_/j.ejmech.2017.03.016,SYNTHETIC,,34.sdf,sdfs/34.sdf
+35,AKC_10.1016C,SYNTHETIC,Muito bom para screening,35.sdf,sdfs/35.sdf
+36,AKC_c5ob00280j,SYNTHETIC,Insolúvel demais,36.sdf,sdfs/36.sdf
+37,AKC_fmc-2017-0120,SYNTHETIC,Artigo bloqueado,37.sdf,sdfs/37.sdf
+38,AKC_molecules21060802,SYNTHETIC,,38.sdf,sdfs/38.sdf
+39,AKC_molecules21060802,SYNTHETIC,,39.sdf,sdfs/39.sdf
+40,AKC_j.ejmech.2017.09.045,SYNTHETIC,,40.sdf,sdfs/40.sdf
+41,AKC_j.actatropica.2010.10.011,SYNTHETIC,Sem alvo,41.sdf,sdfs/41.sdf
+42,AKC_s11030-019-09953-4,SYNTHETIC,Sem alvo,42.sdf,sdfs/42.sdf
+43,AKC_j.bmcl.2011.01.026,SYNTHETIC,Muito bom para screening,43.sdf,sdfs/43.sdf
+44,AKC_14756360600700517,SYNTHETIC,,44.sdf,sdfs/44.sdf
+45,AKC_tswj/2010/174124,SYNTHETIC,Interessante,45.sdf,sdfs/45.sdf
+46,AKC_tswj/2010/174124,SYNTHETIC,Interessante,46.sdf,sdfs/46.sdf
+47,AKC_1475636021000005749,SYNTHETIC,Sem alvo,47.sdf,sdfs/47.sdf
+48,AKC_j.bmc.2013.09.002,SYNTHETIC,Muito bom para screening,48.sdf,sdfs/48.sdf
+49,AKC_j.ejmech.2015.02.038,SYNTHETIC,,49.sdf,sdfs/49.sdf
+50,AKC_j.ejmech.2015.02.038,SYNTHETIC,Muito bom para screening,50.sdf,sdfs/50.sdf
+51,AKC_AJPP2016.4401,SYNTHETIC,Muito bom para screening,51.sdf,sdfs/51.sdf
+52,AKC_acs.jmedchem.5b01456,SYNTHETIC,Muito bom para screening,52.sdf,sdfs/52.sdf
+53,AKC_molecules18044718,SYNTHETIC,Muito bom para screening,53.sdf,sdfs/53.sdf
+54,AKC_j.bmc.2018.06.033,SYNTHETIC,,54.sdf,sdfs/54.sdf
+55,AKC_AAC.02582-15,SYNTHETIC,,55.sdf,sdfs/55.sdf
+56,AKC_j.ejmech.2014.12.051,SYNTHETIC,,56.sdf,sdfs/56.sdf
+57,AKC_S0925-4439(02)00088-1,SYNTHETIC,Antigo - PTR1,57.sdf,sdfs/57.sdf
+58,AKC_j.bmcl.2009.07.081,SYNTHETIC,,58.sdf,sdfs/58.sdf
+59,AKC_2047773211Y.0000000005,SYNTHETIC,,59.sdf,sdfs/59.sdf
+60,AKC_j.ejmech.2018.03.014,SYNTHETIC,Muito bom para screening,60.sdf,sdfs/60.sdf
+61,AKC_C4MD00298A,SYNTHETIC,Muito bom para screening,61.sdf,sdfs/61.sdf
+62,AKC_C4MD00298A,SYNTHETIC,Muito bom para screening,61_alt_1.sdf,sdfs/62.sdf
+63,AKC_s00436-021-07266-w,SYNTHETIC,,62.sdf,sdfs/63.sdf
+64,AKC_10406638.2022.2092877,SYNTHETIC,,63.sdf,sdfs/64.sdf
+65,AKC_acs.jmedchem.1c00813,SYNTHETIC,,64.sdf,sdfs/65.sdf
+66,AKC_ijms21186839,SYNTHETIC,Muito bom para screening,65.sdf,sdfs/66.sdf
+67,AKC_ardp.201900241,SYNTHETIC,,66.sdf,sdfs/67.sdf
+68,AKC_jhet.3812,SYNTHETIC,,67.sdf,sdfs/68.sdf
+69,AKC_j.bmc.2019.115187,SYNTHETIC,Muito bom para screening,68.sdf,sdfs/69.sdf
+70,AKC_j.bmc.2019.07.009,SYNTHETIC,Muito bom para screening,69.sdf,sdfs/70.sdf
+71,AKC_s11030-018-9830-7,SYNTHETIC,,70.sdf,sdfs/71.sdf
+72,AKC_cbdd.13326,SYNTHETIC,,71.sdf,sdfs/72.sdf
+73,AKC_acsmedchemlett.8b00053,SYNTHETIC,Muito bom para screening,72.sdf,sdfs/73.sdf
+74,AKC_j.ejmech.2018.04.033,SYNTHETIC,Muito bom para screening,73.sdf,sdfs/74.sdf
+75,AKC_1573406414666180226163222,SYNTHETIC,,74.sdf,sdfs/75.sdf
+76,AKC_s00044-017-1824-y,SYNTHETIC,,75.sdf,sdfs/76.sdf
+77,AKC_acs.jmedchem.6b01447,SYNTHETIC,Muito bom para screening,76.sdf,sdfs/77.sdf
+78,AKC_j.ejmech.2016.07.014,SYNTHETIC,,77.sdf,sdfs/78.sdf
+79,AKC_j.ejmech.2020.112956,SYNTHETIC,Muito bom para screening,78.sdf,sdfs/79.sdf
+80,AKC_j.heliyon.2020.e03614,SYNTHETIC,,79.sdf,sdfs/80.sdf
+81,AKC_s11033-020-05887-5,SYNTHETIC,,80.sdf,sdfs/81.sdf
+82,AKC_j.ejmech.2022.114675,SYNTHETIC,,81.sdf,sdfs/82.sdf
+83,AKC_molecules27175401,SYNTHETIC,,82.sdf,sdfs/83.sdf
+84,acsinfecdis.2c00325,SYNTHETIC,Excelente para o LigBrs,83.sdf,sdfs/84.sdf
+85,AKC_ph15080998,SYNTHETIC,Fazer screening URGENTE,84.sdf,sdfs/85.sdf
+86,AKC_ph15081005,NATURAL,,85.sdf,sdfs/86.sdf
+87,AKC_j.phymed.2022.154221,SYNTHETIC,,86.sdf,sdfs/87.sdf
+88,AKC_slct.202201664,SYNTHETIC,Fazer screening URGENTE,87.sdf,sdfs/88.sdf
+89,AKC_j.ejmech.2022.114367,SYNTHETIC,Fazer screening URGENTE,88.sdf,sdfs/89.sdf
+90,AKC_1568026622666220707095718,NATURAL,,89.sdf,sdfs/90.sdf
+91,AKC_pharmaceutics14071373,SYNTHETIC,Muito bom para screening,90.sdf,sdfs/91.sdf
+92,AKC_j.exppara.2022.108269,SYNTHETIC,Derivado PN,91.sdf,sdfs/92.sdf
+93,AKC_tropicalmed7060112,SYNTHETIC,,92.sdf,sdfs/93.sdf
+94,AKC_j.bioorg.2022.105766,SYNTHETIC,,93.sdf,sdfs/94.sdf
+95,AKC_cmdc.202200023,SYNTHETIC,Fazer screening URGENTE,94.sdf,sdfs/95.sdf
+96,AKC_j.molstruc.2022.132528,SYNTHETIC,Muito bom para screening,95.sdf,sdfs/96.sdf
+97,AKC_D2MD00078D,SYNTHETIC,Artigo Bloqueado,96.sdf,sdfs/97.sdf
+98,AKC_j.exppara.2022.108253,SYNTHETIC,Fazer screening URGENTE,97.sdf,sdfs/98.sdf
+99,AKC_s00436-022-07431-9,SYNTHETIC,,98.sdf,sdfs/99.sdf
+100,AKC_ph15040446,SYNTHETIC,,99.sdf,sdfs/100.sdf
+101,AKC_s11686-021-00457-6,SYNTHETIC,,100.sdf,sdfs/101.sdf
+102,AKC_j.ejmech.2021.113915,SYNTHETIC,,101.sdf,sdfs/102.sdf
+103,AKC_j.cbi.2021.109690,SYNTHETIC,,102.sdf,sdfs/103.sdf
+104,AKC_j.cbi.2021.109690,SYNTHETIC,,103.sdf,sdfs/104.sdf
+105,AKC_14756366.2022.2117316,SYNTHETIC,,104.sdf,sdfs/105.sdf
+106,AKC_14756366.2022.2117316,SYNTHETIC,,104_2.sdf,sdfs/106.sdf
+107,AKC_14756366.2022.2117316,SYNTHETIC,Fazer screening URGENTE,105.sdf,sdfs/107.sdf
+108,AKC_acsmedchemlett.2c00170,SYNTHETIC,Fazer screening URGENTE,106.sdf,sdfs/108.sdf
+109,AKC_cmdc.202100413,SYNTHETIC,,107.sdf,sdfs/109.sdf
+110,AKC_ijms222413613,SYNTHETIC,,108.sdf,sdfs/110.sdf
+111,AKC_molecules26247473,SYNTHETIC,Incerto,109.sdf,sdfs/111.sdf
+112,AKC_j.bioorg.2021.105414,SYNTHETIC,,110.sdf,sdfs/112.sdf
+113,AKC_journal.pone.0258996,SYNTHETIC,,111.sdf,sdfs/113.sdf
+114,AKC_journal.pone.0259008,SYNTHETIC,Fazer screening URGENTE,112.sdf,sdfs/114.sdf
+115,AKC_j.intimp.2021.108130,NATURAL,,113.sdf,sdfs/115.sdf
+116,AKC_j.ejmech.2021.113516,SYNTHETIC,Muito bom para screening,114.sdf,sdfs/116.sdf
+117,AKC_j.biochi.2021.06.015,NATURAL,,115.sdf,sdfs/117.sdf
+118,AKC_acs.jmedchem.1c00725,SYNTHETIC,,116.sdf,sdfs/118.sdf
+119,AKC_acsmedchemlett.1c00193,SYNTHETIC,,117.sdf,sdfs/119.sdf
+120,AKC_j.biopha.2021.111857,SYNTHETIC,,118.sdf,sdfs/120.sdf
+121,AKC_j.bioorg.2021.105141,SYNTHETIC,Muito bom para screening,119.sdf,sdfs/121.sdf
+122,AKC_cbdv.202100381,NATURAL,,120.sdf,sdfs/122.sdf
+123,AKC_jcb.29922,DRUG,,121.sdf,sdfs/123.sdf
+124,AKC_acs.jmedchem.1c00813,SYNTHETIC,,122.sdf,sdfs/124.sdf
+125,AKC_fmb-2020-0320,SYNTHETIC,,123.sdf,sdfs/125.sdf
+126,AKC_j.ijpddr.2021.02.006,SYNTHETIC,,124.sdf,sdfs/126.sdf
+127,AKC_j.ijpddr.2021.02.006,SYNTHETIC,Muito bom para screening,125.sdf,sdfs/127.sdf
+128,AKC_j.parint.2021.102342,SYNTHETIC,,126.sdf,sdfs/128.sdf
+129,AKC_acsinfecdis.0c00855,SYNTHETIC,,127.sdf,sdfs/129.sdf
+130,AKC_AAC.01513-20,SYNTHETIC,,128.sdf,sdfs/130.sdf
+131,AKC_s00436-021-07169-w,NATURAL,,129.sdf,sdfs/131.sdf
+132,AKC_s00436-021-07169-w,SYNTHETIC,Muito bom para screening,130.sdf,sdfs/132.sdf
+133,AKC_acs.jmedchem.1c00047,SYNTHETIC,Sensacional,131.sdf,sdfs/133.sdf
+134,AKC_j.bioorg.2021.104816,SYNTHETIC,Muito bom para screening,132.sdf,sdfs/134.sdf
+135,AKC_j.bioorg.2021.104816,SYNTHETIC,Muito bom para screening,132_2.sdf,sdfs/135.sdf
+136,AKC_jhet.4217,SYNTHETIC,,133_NLwIx7o.sdf,sdfs/136.sdf
+137,AKC_jhet.4217,SYNTHETIC,,134_fj3y5Jv.sdf,sdfs/137.sdf
+138,AKC_j.ejmech.2020.113101,SYNTHETIC,,135_Obmy7nd.sdf,sdfs/138.sdf
+139,AKC_j.jddst.2020.101988,SYNTHETIC,,136.sdf,sdfs/139.sdf
+140,AKC_fchem.2020.624678,SYNTHETIC,,137.sdf,sdfs/140.sdf
+141,AKC_acsinfecdis.0c00546,SYNTHETIC,Fazer screening URGENTE,138.sdf,sdfs/141.sdf
+142,AKC_10406638.2021.2014532,SYNTHETIC,Artigo Bloqueado,139.sdf,sdfs/142.sdf
+143,AKC_07391102.2021.1973564,SYNTHETIC,Artigo Bloqueado,140.sdf,sdfs/143.sdf
+144,AKC_biom11010056,SYNTHETIC,,141.sdf,sdfs/144.sdf
+145,AKC_cbdv.202000839,SYNTHETIC,,142.sdf,sdfs/145.sdf
+146,AKC_cbdv.202000839,SYNTHETIC,,142_2.sdf,sdfs/146.sdf
+147,AKC_j.biopha.2020.111049,SYNTHETIC,,143.sdf,sdfs/147.sdf
+148,AKC_j.biopha.2020.111049,SYNTHETIC,Fazer screening URGENTE,144.sdf,sdfs/148.sdf
+149,AKC_j.biopha.2020.111049,SYNTHETIC,,145.sdf,sdfs/149.sdf
+150,AKC_j.biopha.2020.111049,SYNTHETIC,,146.sdf,sdfs/150.sdf
+151,AKC_j.biopha.2020.111049,SYNTHETIC,Fazer screening URGENTE,147.sdf,sdfs/151.sdf
+152,AKC_j.biopha.2020.111049,SYNTHETIC,Fazer screening URGENTE,148.sdf,sdfs/152.sdf
+153,AKC_j.intimp.2020.107124,NATURAL,,149.sdf,sdfs/153.sdf
+154,AKC_14786419.2020.1765347,NATURAL,,150.sdf,sdfs/154.sdf
+155,AKC_14786419.2020.1747457,NATURAL,,151.sdf,sdfs/155.sdf
+156,AKC_14786419.2019.1619725,NATURAL,,152.sdf,sdfs/156.sdf
+157,AKC_fphar.2020.584668,SYNTHETIC,,153.sdf,sdfs/157.sdf
+158,AKC_fvets.2020.00527,NATURAL,,154.sdf,sdfs/158.sdf
+159,AKC_journal.pone.0243392,SYNTHETIC,,155.sdf,sdfs/159.sdf
+160,AKC_j.ijpharm.2020.119764,SYNTHETIC,Pouco Solúvel,156.sdf,sdfs/160.sdf
+161,akc_journal.pntd.0007235,SYNTHETIC,,157.sdf,sdfs/161.sdf
+162,AKC_acs.jmedchem.0c01589,SYNTHETIC,,158.sdf,sdfs/162.sdf
+163,AKC_acs.jmedchem.0c01589,SYNTHETIC,Fazer screening URGENTE,159.sdf,sdfs/163.sdf
+164,AKC_journal.pone.0241855,SYNTHETIC,Muito bom para screening / Produto Natural,160.sdf,sdfs/164.sdf
+165,s11033-020-05887-5,SYNTHETIC,,161.sdf,sdfs/165.sdf
+166,AKC_s00044-020-02619-z,SYNTHETIC,Fazer screening URGENTE,162.sdf,sdfs/166.sdf
+167,AKC_j.ejmech.2020.112493,SYNTHETIC,Paia,163.sdf,sdfs/167.sdf
+168,AKC_s00436-020-06832-y,SYNTHETIC,Muito bom para screening,164.sdf,sdfs/168.sdf
+169,AKC_acs.jmedchem.0c00705,SYNTHETIC,Fazer screening URGENTE/Muito avançado,165.sdf,sdfs/169.sdf
+170,AKC_ijms21186839,SYNTHETIC,,166.sdf,sdfs/170.sdf
+171,AKC_D0MD00083C,SYNTHETIC,,167.sdf,sdfs/171.sdf
+172,AKC_D0MD00083C,SYNTHETIC,,168.sdf,sdfs/172.sdf
+173,AKC_D0MD00083C,SYNTHETIC,,168_2.sdf,sdfs/173.sdf
+174,AKC_D0MD00083C,SYNTHETIC,,169.sdf,sdfs/174.sdf
+175,AKC_D0MD00083C,SYNTHETIC,,170.sdf,sdfs/175.sdf
+176,AKC_D0MD00083C,SYNTHETIC,,171.sdf,sdfs/176.sdf
+177,AKC_D0MD00083C,SYNTHETIC,Muito bom para screening,172.sdf,sdfs/177.sdf
+178,AKC_j.jgar.2020.02.028,SYNTHETIC,,173.sdf,sdfs/178.sdf
+179,AKC_j.ejmech.2020.112418,SYNTHETIC,Muito bom para screening,174.sdf,sdfs/179.sdf
+180,AKC_s12639-020-01230-8,NATURAL,,175.sdf,sdfs/180.sdf
+181,AKC_D0NJ01206H,SYNTHETIC,Muito bom para screening,176.sdf,sdfs/181.sdf
+182,AKC_ardp.201900325,SYNTHETIC,,177.sdf,sdfs/182.sdf
+183,AKC_acs.jmedchem.0c00570,SYNTHETIC,Muito bom para screening,178.sdf,sdfs/183.sdf
+184,AKC,SYNTHETIC,,179.sdf,sdfs/184.sdf
+185,AKC_D0MD00123F,SYNTHETIC,,180.sdf,sdfs/185.sdf
+186,AKC_AAC.01766-19,SYNTHETIC,,181.sdf,sdfs/186.sdf
+187,AKC_j.ejmech.2016.08.048,SYNTHETIC,Muito bom para screening,182.sdf,sdfs/187.sdf
+188,AKC_jhet.3990,SYNTHETIC,,183.sdf,sdfs/188.sdf
+189,AKC_acs.jmedchem.9b02016,SYNTHETIC,Paia,184.sdf,sdfs/189.sdf
+190,AKC_0103-5053.20200003,SYNTHETIC,,185.sdf,sdfs/190.sdf
+191,AKC_cbdv.202000142,SYNTHETIC,,186.sdf,sdfs/191.sdf
+192,AKC_S0031182021002079,SYNTHETIC,,187.sdf,sdfs/192.sdf
+193,AKC_S0031182021002079,SYNTHETIC,,188.sdf,sdfs/193.sdf
+194,AKC,SYNTHETIC,,189.sdf,sdfs/194.sdf
+195,AKC,SYNTHETIC,,190.sdf,sdfs/195.sdf
+196,AKC,SYNTHETIC,,191.sdf,sdfs/196.sdf
+197,AKC_D0RA00287A,SYNTHETIC,,192.sdf,sdfs/197.sdf
+198,AKC_s11686-019-00146-5,SYNTHETIC,,193.sdf,sdfs/198.sdf
+199,AKC_ardp.201900241,SYNTHETIC,,194.sdf,sdfs/199.sdf
+200,AKC_molecules25030465,SYNTHETIC,,195.sdf,sdfs/200.sdf
+201,AKC_j.cbi.2019.108850,SYNTHETIC,,196.sdf,sdfs/201.sdf
+202,AKC_1871526518666181113114820,SYNTHETIC,,197.sdf,sdfs/202.sdf
+203,AKC_1568026620666200616142120,SYNTHETIC,,198.sdf,sdfs/203.sdf
+204,AKC_cbdd.12112,SYNTHETIC,,199.sdf,sdfs/204.sdf
+205,AKC_j.ejmech.2019.111742,SYNTHETIC,,200.sdf,sdfs/205.sdf
+206,AKC_jphp.1316,SYNTHETIC,,201.sdf,sdfs/206.sdf
+207,AKC_j.ejmech.2019.111688,SYNTHETIC,,202.sdf,sdfs/207.sdf
+208,AKC_biom9110643,SYNTHETIC,,203.sdf,sdfs/208.sdf
+209,AKC_j.bjp.2019.08.002,SYNTHETIC,,204.sdf,sdfs/209.sdf
+210,AKC_j.bioorg.2019.103274,SYNTHETIC,,205.sdf,sdfs/210.sdf
+211,AKC_j.ejmech.2019.07.010,SYNTHETIC,,206.sdf,sdfs/211.sdf
+212,AKC_j.ijantimicag.2019.07.013,SYNTHETIC,,207.sdf,sdfs/212.sdf
+213,AKC_j.ejmech.2019.06.051,SYNTHETIC,Muito bom para screening,208.sdf,sdfs/213.sdf
+214,AKC_j.ejmech.2019.06.051,SYNTHETIC,,209.sdf,sdfs/214.sdf
+215,AKC_acs.jnatprod.9b00632,SYNTHETIC,,210.sdf,sdfs/215.sdf
+216,AKC_j.bmc.2019.07.009,SYNTHETIC,,211.sdf,sdfs/216.sdf
+217,AKC_j.bmc.2019.07.009,SYNTHETIC,,212.sdf,sdfs/217.sdf
+218,AKC_acs.jmedchem.9b00628,SYNTHETIC,Muito bom para screening,213.sdf,sdfs/218.sdf
+219,AKC_j.exppara.2019.04.003,SYNTHETIC,,214.sdf,sdfs/219.sdf
+220,AKC_ardp.201800299,SYNTHETIC,,215.sdf,sdfs/220.sdf
+221,AKC_j.bbamem.2019.03.006,NATURAL,,216.sdf,sdfs/221.sdf
+222,AKC_j.ejmech.2019.03.032,SYNTHETIC,,217.sdf,sdfs/222.sdf
+223,AKC_j.ejmech.2019.03.007,SYNTHETIC,,218.sdf,sdfs/223.sdf
+224,AKC_j.ejmech.2019.03.007,SYNTHETIC,,219.sdf,sdfs/224.sdf
+225,AKC_j.parint.2019.02.006,SYNTHETIC,,220.sdf,sdfs/225.sdf
+226,AKC_S0031182019000052,SYNTHETIC,Artigo Bloqueado,221.sdf,sdfs/226.sdf
+227,AKC_S0031182019000052,SYNTHETIC,Artigo Bloqueado,222.sdf,sdfs/227.sdf
+228,AKC_AAC.02200-18,SYNTHETIC,,223.sdf,sdfs/228.sdf
+229,AKC_ardp.201800281,SYNTHETIC,,224.sdf,sdfs/229.sdf
+230,AKC_acs.jnatprod.8b00884,SYNTHETIC,Muito bom para screening,225.sdf,sdfs/230.sdf
+231,AKC_j.parint.2018.12.006,SYNTHETIC,Muito bom para screening,226.sdf,sdfs/231.sdf
+232,AKC_j.parint.2018.12.006,SYNTHETIC,Muito bom para screening,226_2.sdf,sdfs/232.sdf
+233,AKC_j.parint.2018.12.006,SYNTHETIC,Muito bom para screening,226_3.sdf,sdfs/233.sdf
+234,AKC_j.parint.2018.12.006,SYNTHETIC,Muito bom para screening,226_4.sdf,sdfs/234.sdf
+235,AKC_j.exppara.2019.01.011,SYNTHETIC,,227.sdf,sdfs/235.sdf
+236,AKC_j.actatropica.2018.12.036,SYNTHETIC,,228.sdf,sdfs/236.sdf
+237,AKC_j.jmgm.2018.11.014,SYNTHETIC,,229.sdf,sdfs/237.sdf
+238,AKC_j.bioorg.2018.11.037,SYNTHETIC,Muito bom para screening,230.sdf,sdfs/238.sdf
+239,AKC_j.bioorg.2018.10.059,NATURAL,,231.sdf,sdfs/239.sdf
+240,AKC_j.bioorg.2018.10.028,SYNTHETIC,,232.sdf,sdfs/240.sdf
+241,AKC_j.ejmech.2018.12.034,SYNTHETIC,,233.sdf,sdfs/241.sdf
+242,AKC_j.ejmech.2018.10.065,SYNTHETIC,,234.sdf,sdfs/242.sdf
+243,AKC_journal.pntd.0007643,NATURAL,,N1.sdf,sdfs/243.sdf
+244,AKC_C8MD00475G,SYNTHETIC,Muito bom para screening,235.sdf,sdfs/244.sdf
+245,AKC_journal.pntd.0006930,SYNTHETIC,paia,236.sdf,sdfs/245.sdf
+246,AKC_j.exppara.2018.10.007,SYNTHETIC,,237.sdf,sdfs/246.sdf
+247,AKC_j.biopha.2018.10.012,SYNTHETIC,Fazer screening URGENTE,238.sdf,sdfs/247.sdf
+248,AKC_molecules23123160,NATURAL,,239.sdf,sdfs/248.sdf
+249,AKC_s40409-018-0174-7,SYNTHETIC,,240.sdf,sdfs/249.sdf
+250,AKC_journal.pone.0206920,SYNTHETIC,Fazer screening URGENTE,241.sdf,sdfs/250.sdf
+251,AKC_j.ijbiomac.2018.08.019,SYNTHETIC,Fazer screening URGENTE,242.sdf,sdfs/251.sdf
+252,AKC,DRUG,,243.sdf,sdfs/252.sdf
+253,AKC_j.biopha.2018.07.056,SYNTHETIC,,245.sdf,sdfs/253.sdf
+254,AKC_s40409-018-0164-9,SYNTHETIC,,246.sdf,sdfs/254.sdf
+255,AKC_j.cbi.2018.08.003,SYNTHETIC,,247.sdf,sdfs/255.sdf
+256,AKC_j.ejps.2018.06.023,SYNTHETIC,,248.sdf,sdfs/256.sdf
+257,AKC_jac/dky229,SYNTHETIC,,249.sdf,sdfs/257.sdf
+258,AKC_AAC.00079-18,SYNTHETIC,Paia,250.sdf,sdfs/258.sdf
+259,AKC_j.jgar.2018.05.007,DRUG,,251.sdf,sdfs/259.sdf
+260,AKC_cbdd.13326,SYNTHETIC,Muito bom para screening,252.sdf,sdfs/260.sdf
+261,AKC_s40409-018-0156-9,SYNTHETIC,,253.sdf,sdfs/261.sdf
+262,AKC_s40409-0,SYNTHETIC,,254.sdf,sdfs/262.sdf
+263,AKC_s40409-0,SYNTHETIC,,255.sdf,sdfs/263.sdf
+264,AKC_ardp.201800094,SYNTHETIC,Paia,256.sdf,sdfs/264.sdf
+265,AKC_cmdc.201800328,SYNTHETIC,,257.sdf,sdfs/265.sdf
+266,AKC_acsmedchemlett.8b00053,SYNTHETIC,,258.sdf,sdfs/266.sdf
+267,AKC_acsmedchemlett.8b00053,SYNTHETIC,Muito bom para screening,259.sdf,sdfs/267.sdf
+268,AKC_j.fitote.2018.05.027,NATURAL,,260.sdf,sdfs/268.sdf
+269,AKC_j.actatropica.2018.03.023,SYNTHETIC,,261.sdf,sdfs/269.sdf
+270,AKC_j.actatropica.2018.03.023,SYNTHETIC,,262.sdf,sdfs/270.sdf
+271,AKC_j.ejmech.2018.05.014,SYNTHETIC,,263.sdf,sdfs/271.sdf
+272,AKC_j.exppara.2018.04.017,SYNTHETIC,,264.sdf,sdfs/272.sdf
+273,AKC_j.ejmech.2018.04.033,SYNTHETIC,,265.sdf,sdfs/273.sdf
+274,AKC_AAC.37.12.2550,NATURAL,,266.sdf,sdfs/274.sdf
+275,AKC_AAC.43.5.1234,NATURAL,,267.sdf,sdfs/275.sdf
+276,AKC_j.bmc.2005.10.005,SYNTHETIC,,268.sdf,sdfs/276.sdf
+277,AKC_s00284-009-9447-2,SYNTHETIC,,269.sdf,sdfs/277.sdf
+278,AKC_j.bmcl.2016,NATURAL,,270.sdf,sdfs/278.sdf
+279,AKC_molecules190913251,SYNTHETIC,,271.sdf,sdfs/279.sdf
+280,AKC_s00044-017-1846-5,SYNTHETIC,,272.sdf,sdfs/280.sdf
+281,AKC_j.ijantimicag.2016.09.018,SYNTHETIC,,273.sdf,sdfs/281.sdf
+282,AKC_jm401893j,SYNTHETIC,,274.sdf,sdfs/282.sdf
+283,AKC_jm401893j,SYNTHETIC,,274_2.sdf,sdfs/283.sdf
+284,AKC_j.bmcl.2013.09.047,SYNTHETIC,,275.sdf,sdfs/284.sdf
+285,AKC_j.ejmech.2016.12.017,SYNTHETIC,,276.sdf,sdfs/285.sdf
+286,AKC_j.bmcl.2017.04.010,SYNTHETIC,,277.sdf,sdfs/286.sdf
+287,AKC_j.ejmech.2018.03.014,SYNTHETIC,,278.sdf,sdfs/287.sdf
+288,AKC_j.bmcl.2018.02.023,SYNTHETIC,,279.sdf,sdfs/288.sdf
+289,AKC_journal.pntd.0007235,SYNTHETIC,,280.sdf,sdfs/289.sdf
+290,AKC_s40883-018-0045-3,SYNTHETIC,,281.sdf,sdfs/290.sdf
+291,AKC_j.phytol.2011.08.001,SYNTHETIC,,282.sdf,sdfs/291.sdf
+292,AKC_slct.201703095,SYNTHETIC,,283.sdf,sdfs/292.sdf
+293,AKC_j.ejpb.2013.08.014,SYNTHETIC,Muito bom para screening,284.sdf,sdfs/293.sdf
+294,AKC_s00436-017-5713-6,SYNTHETIC,,285.sdf,sdfs/294.sdf
+295,AKC_cbdd.13088,SYNTHETIC,Muito bom para screening,286.sdf,sdfs/295.sdf
+296,AKC_cbdd.13088,SYNTHETIC,Muito bom para screening,286_2.sdf,sdfs/296.sdf
+297,AKC_s00044-017-2076-6,SYNTHETIC,,287.sdf,sdfs/297.sdf
+298,AKC_s00044-017-2076-6,SYNTHETIC,,288.sdf,sdfs/298.sdf
+299,AKC_acs.jnatprod.7b00876,SYNTHETIC,,289.sdf,sdfs/299.sdf
+300,AKC_1568026618666181002110116,SYNTHETIC,,290.sdf,sdfs/300.sdf
+301,AKC_0103-5053.20180134,SYNTHETIC,Fazer screening URGENTE,291.sdf,sdfs/301.sdf
+302,AKC_1573406414666180226163222,SYNTHETIC,,292.sdf,sdfs/302.sdf
+303,AKC_1568026618666180516125056,SYNTHETIC,,293.sdf,sdfs/303.sdf
+304,AKC_molecules23010070,SYNTHETIC,,294.sdf,sdfs/304.sdf
+305,AKC_molecules23010070,SYNTHETIC,,295.sdf,sdfs/305.sdf
+306,AKC_j.exppara.2017.11.009,SYNTHETIC,,296.sdf,sdfs/306.sdf
+307,AKC_s00044-017-2019-2,SYNTHETIC,Muito bom para screening,297.sdf,sdfs/307.sdf
+308,AKC_cbdd.13024,SYNTHETIC,,298.sdf,sdfs/308.sdf
+309,AKC_cbdd.13024,SYNTHETIC,,299.sdf,sdfs/309.sdf
+310,AKC_cbdd.12986,SYNTHETIC,,300.sdf,sdfs/310.sdf
+311,AKC_j.ejps.2017.05.005,SYNTHETIC,,301.sdf,sdfs/311.sdf
+312,AKC_j.ejps.2017.05.005,SYNTHETIC,,302.sdf,sdfs/312.sdf
+313,AKC_s00044-017-1846-5,SYNTHETIC,,303.sdf,sdfs/313.sdf
+314,AKC_IJBMS.2017.8828,SYNTHETIC,Estrutura Incerta,304.sdf,sdfs/314.sdf
+315,akc_1570180813666160927113743,SYNTHETIC,,305.sdf,sdfs/315.sdf
+316,AKC_j.exppara.2017.02.004,SYNTHETIC,,306.sdf,sdfs/316.sdf
+317,AKC_j.exppara.2017.02.015,NATURAL,,307.sdf,sdfs/317.sdf
+318,AKC_S0031182016002389,NATURAL,,308.sdf,sdfs/318.sdf
+319,AKC_j.bcp.2016.12.012,SYNTHETIC,,309.sdf,sdfs/319.sdf
+320,AKC_2210315507666161206123513,SYNTHETIC,Artigo Bloqueado,310.sdf,sdfs/320.sdf
+321,AKC_2210315507666161206123513,SYNTHETIC,Artigo Bloqueado,310_2.sdf,sdfs/321.sdf
+322,AKC_j.exppara.2017.01.002,NATURAL,,311.sdf,sdfs/322.sdf
+323,AKC_j.bcp.2016.12.018,NATURAL,,312.sdf,sdfs/323.sdf
+324,AKC_j.actatropica.2016.12.027,SYNTHETIC,,313.sdf,sdfs/324.sdf
+325,AKC_j.actatropica.2016.12.027,SYNTHETIC,,313_2.sdf,sdfs/325.sdf
+326,AKC_j.actatropica.2016.12.027,SYNTHETIC,,313_3.sdf,sdfs/326.sdf
+327,AKC_j.actatropica.2016.12.027,SYNTHETIC,,313_4.sdf,sdfs/327.sdf
+328,AKC_tjpr.v16i2.11,SYNTHETIC,,314.sdf,sdfs/328.sdf
+329,AKC_j.bioorg.2016.11.013,SYNTHETIC,,315.sdf,sdfs/329.sdf
+330,AKC_journal.pntd.0006157,SYNTHETIC,Muito bom para screening,316.sdf,sdfs/330.sdf
+331,AKC_journal.pntd.0006157,SYNTHETIC,,317.sdf,sdfs/331.sdf
+332,AKC_journal.pntd.0006157,SYNTHETIC,Muito bom para screening,318.sdf,sdfs/332.sdf
+333,AKC_journal.pntd.0006157,SYNTHETIC,,319.sdf,sdfs/333.sdf
+334,AKC_journal.pntd.0006157,SYNTHETIC,Muito bom para screening,320.sdf,sdfs/334.sdf
+335,AKC_journal.pntd.0006157,SYNTHETIC,,321.sdf,sdfs/335.sdf
+336,AKC_journal.pntd.0006157,SYNTHETIC,,322.sdf,sdfs/336.sdf
+337,AKC_journal.pntd.0006157,SYNTHETIC,Muito bom para screening,323.sdf,sdfs/337.sdf
+338,AKC_journal.pntd.0006157,SYNTHETIC,Muito bom para screening,323_2.sdf,sdfs/338.sdf
+339,AKC_journal.pntd.0006157,SYNTHETIC,,324.sdf,sdfs/339.sdf
+340,AKC,NATURAL,,325.sdf,sdfs/340.sdf
+341,AKC_C7MD00125H,SYNTHETIC,,326.sdf,sdfs/341.sdf
+342,AKC_j.ejmech.2017.08.055,SYNTHETIC,,327.sdf,sdfs/342.sdf
+343,AKC_PMC5629310,SYNTHETIC,,328.sdf,sdfs/343.sdf
+344,AKC_C7RA01070B,SYNTHETIC,,329.sdf,sdfs/344.sdf
+345,AKC_j.ejmech.2017.01.029,SYNTHETIC,,330.sdf,sdfs/345.sdf
+346,AKC_j.ejmech.2017.01.022,SYNTHETIC,,331.sdf,sdfs/346.sdf
+347,AKC_j.bmc.2016.10.013,SYNTHETIC,,332.sdf,sdfs/347.sdf
+348,AKC_s00044-016-1729-1,SYNTHETIC,,333.sdf,sdfs/348.sdf
+349,AKC_j.cbi.2016.10.017,SYNTHETIC,,334.sdf,sdfs/349.sdf
+350,AKC_j.exppara.2016.10.009,SYNTHETIC,,335.sdf,sdfs/350.sdf
+351,AKC_j.parint.2016.08.003,SYNTHETIC,,336.sdf,sdfs/351.sdf
+352,AKC_AAC.01545-16,DRUG,,337.sdf,sdfs/352.sdf
+353,AKC_j.ejmech.2016.06.004,SYNTHETIC,,338.sdf,sdfs/353.sdf
+354,AKC_AAC.00352-16,SYNTHETIC,Muito bom para screening,339.sdf,sdfs/354.sdf
+355,AKC_s10495-016-1282-x,NATURAL,,340.sdf,sdfs/355.sdf
+356,AKC_acs.jnatprod.6b00256,SYNTHETIC,,341.sdf,sdfs/356.sdf
+357,AKC_acs.jnatprod.6b00256,SYNTHETIC,,342.sdf,sdfs/357.sdf
+358,AKC_j.exppara.2016.03.007,SYNTHETIC,,343.sdf,sdfs/358.sdf
+359,AKC_s00109-016-1384-5,SYNTHETIC,,344.sdf,sdfs/359.sdf
+360,AKC_j.parint.2016.01.001,SYNTHETIC,,345.sdf,sdfs/360.sdf
+361,AKC_DDDT.S96650,SYNTHETIC,,346.sdf,sdfs/361.sdf
+362,AKC_j.bmcl.2016.03.082,SYNTHETIC,,347.sdf,sdfs/362.sdf
+363,AKC_s11030-015-9652-9,SYNTHETIC,,348.sdf,sdfs/363.sdf
+364,AKC_0103-5053.20150330,SYNTHETIC,,349.sdf,sdfs/364.sdf
+365,AKC_j.exppara.2016.01.007,SYNTHETIC,,350.sdf,sdfs/365.sdf
+366,AKC_C5MD00498E,SYNTHETIC,Muito bom para screening,351.sdf,sdfs/366.sdf
+367,AKC_j.steroids.2015.12.020,SYNTHETIC,,352.sdf,sdfs/367.sdf
+368,AKC_acs.jnatprod.5b00990,SYNTHETIC,Muito bom para screening,353.sdf,sdfs/368.sdf
+369,AKC_j.bmcl.2016.01.040,SYNTHETIC,,354.sdf,sdfs/369.sdf
+370,AKC_journal.pntd.0004442,NATURAL,,355.sdf,sdfs/370.sdf
+371,AKC_AAC.00426-15,SYNTHETIC,,356.sdf,sdfs/371.sdf
+372,AKC_ajtmh.15-0448,SYNTHETIC,,357.sdf,sdfs/372.sdf
+373,AKC_ajtmh.15-0448,SYNTHETIC,,358.sdf,sdfs/373.sdf
+374,AKC_ajtmh.15-0448,SYNTHETIC,,359.sdf,sdfs/374.sdf
+375,AKC_s11745-015-4114-9,SYNTHETIC,,360.sdf,sdfs/375.sdf
+376,AKC_s11745-015-4114-9,SYNTHETIC,,361.sdf,sdfs/376.sdf
+377,AKC_j.ejmech.2016.09.017,SYNTHETIC,,362.sdf,sdfs/377.sdf
+378,AKC_j.ejmech.2016.08.030,SYNTHETIC,,363.sdf,sdfs/378.sdf
+379,AKC_j.ejmech.2016.08.014,SYNTHETIC,,364.sdf,sdfs/379.sdf
+380,AKC_j.ejmech.2016.08.014,SYNTHETIC,,365.sdf,sdfs/380.sdf
+381,AKC_j.ejmech.2016.07.014,SYNTHETIC,,366.sdf,sdfs/381.sdf
+382,AKC_j.ejmech.2016.01.028,SYNTHETIC,Fazer screening urgente,367.sdf,sdfs/382.sdf
+383,AKC_j.vetpar.2016.01.002,SYNTHETIC,,368.sdf,sdfs/383.sdf
+384,AKC_molecules201219829,NATURAL,,369.sdf,sdfs/384.sdf
+385,AKC_j.ejmech.2015.10.011,SYNTHETIC,,370.sdf,sdfs/385.sdf
+386,AKC_j.ejmech.2015.10.011,SYNTHETIC,,371.sdf,sdfs/386.sdf
+387,AKC_j.biopha.2015.10.028,SYNTHETIC,,372.sdf,sdfs/387.sdf
+388,AKC_j.bmcl.2015.10.062,NATURAL,,373.sdf,sdfs/388.sdf
+389,AKC_j.parint.2015.06.011,SYNTHETIC,,374.sdf,sdfs/389.sdf
+390,AKC_s00436-015-4708-4,NATURAL,,375.sdf,sdfs/390.sdf
+391,AKC_j.ejmech.2015.09.002,SYNTHETIC,Muito bom para screening,376.sdf,sdfs/391.sdf
+392,AKC_j.ejmech.2015.09.002,SYNTHETIC,Muito bom para screening,377.sdf,sdfs/392.sdf
+393,AKC_j.ejmech.2015.09.009,SYNTHETIC,,378.sdf,sdfs/393.sdf
+394,AKC_j.biopha.2015.08.030,SYNTHETIC,,379.sdf,sdfs/394.sdf
+395,AKC_cbdd.12540,SYNTHETIC,,380.sdf,sdfs/395.sdf
+396,AKC_AAC.00997-15,SYNTHETIC,,381.sdf,sdfs/396.sdf
+397,AKC_AAC.00997-15,SYNTHETIC,,382.sdf,sdfs/397.sdf
+398,AKC_j.actatropica.2015.04.028,SYNTHETIC,,383.sdf,sdfs/398.sdf
+399,AKC_j.actatropica.2015.04.028,SYNTHETIC,,384.sdf,sdfs/399.sdf
+400,AKC_C5MD00119F,SYNTHETIC,,385.sdf,sdfs/400.sdf
+401,AKC_np5008697,SYNTHETIC,,386.sdf,sdfs/401.sdf
+402,AKC_j.ejmech.2015.05.046,SYNTHETIC,,387.sdf,sdfs/402.sdf
+403,AKC_S0031182015000141,SYNTHETIC,,388.sdf,sdfs/403.sdf
+404,AKC_j.bmcl.2015.04.097,SYNTHETIC,,389.sdf,sdfs/404.sdf
+405,AKC_j.ejpb.2015.04.018,SYNTHETIC,,390.sdf,sdfs/405.sdf
+406,AKC_s10719-015-9582-x,SYNTHETIC,,391.sdf,sdfs/406.sdf
+407,AKC_j.bmc.2015.03.064,SYNTHETIC,Muito bom para screening,392.sdf,sdfs/407.sdf
+408,AKC_fmb.14.149,NATURAL,,393.sdf,sdfs/408.sdf
+409,AKC_np500809a,SYNTHETIC,,394.sdf,sdfs/409.sdf
+410,AKC_AAC.04742-14,SYNTHETIC,,395.sdf,sdfs/410.sdf
+411,AKC_j.jtcme.2014.11.004,SYNTHETIC,,396.sdf,sdfs/411.sdf
+412,AKC_C4MD00441H,SYNTHETIC,Fazer screening urgente,397.sdf,sdfs/412.sdf
+413,AKC_jac/dku422,SYNTHETIC,Muito bom para screening,398.sdf,sdfs/413.sdf
+414,AKC_AAC.04003-14,SYNTHETIC,,399.sdf,sdfs/414.sdf
+415,AKC_j.bmcl.2014.09.078,SYNTHETIC,,400.sdf,sdfs/415.sdf
+416,AKC_j.bmcl.2014.11.073,SYNTHETIC,,401.sdf,sdfs/416.sdf
+417,AKC_j.ejmech.2014.10.040,SYNTHETIC,,402.sdf,sdfs/417.sdf
+418,AKC_AAC.03340-14,SYNTHETIC,,403.sdf,sdfs/418.sdf
+419,AKC_j.ejmech.2014.09.076,SYNTHETIC,,404.sdf,sdfs/419.sdf
+420,AKC_j.jep.2014.09.010,NATURAL,,405.sdf,sdfs/420.sdf
+421,AKC_journal.pone.0109672,SYNTHETIC,,406.sdf,sdfs/421.sdf
+422,AKC_j.bmcl.2014.08.060,SYNTHETIC,,407.sdf,sdfs/422.sdf
+423,AKC_AAC.02874-14,SYNTHETIC,Muito bom para screening,408.sdf,sdfs/423.sdf
+424,AKC_j.ejmech.2014.07.038,SYNTHETIC,,409.sdf,sdfs/424.sdf
+425,AKC_journal.pone.0105127,SYNTHETIC,,410.sdf,sdfs/425.sdf
+426,AKC_molecules190913251,NATURAL,,411.sdf,sdfs/426.sdf
+427,AKC_journal.pntd.0003093,NATURAL,,412.sdf,sdfs/427.sdf
+428,AKC_j.bmcl.2014.06.030,SYNTHETIC,,413.sdf,sdfs/428.sdf
+429,AKC_molecules191220374,SYNTHETIC,,414.sdf,sdfs/429.sdf
+430,AKC_j.ijpddr.2014.10.005,SYNTHETIC,Fazer screening urgente,415.sdf,sdfs/430.sdf
+431,AKC_journal.pone.0107994,SYNTHETIC,Muito bom para screening,416.sdf,sdfs/431.sdf
+432,AKC_j.phymed.2014.05.005,NATURAL,,417.sdf,sdfs/432.sdf
+433,AKC_journal.pone.0091259,SYNTHETIC,,418.sdf,sdfs/433.sdf
+434,AKC_j.ejmech.2013.12.030,SYNTHETIC,,419.sdf,sdfs/434.sdf
+435,AKC_s00044-013-0741-y,SYNTHETIC,,420.sdf,sdfs/435.sdf
+436,AKC_molecules19021394,SYNTHETIC,,421.sdf,sdfs/436.sdf
+437,AKC_j.bmc.2013.12.039,SYNTHETIC,,422.sdf,sdfs/437.sdf
+438,AKC_j.ejmech.2013.11.011,SYNTHETIC,,423.sdf,sdfs/438.sdf
+439,AKC_1573406410666140507095430,SYNTHETIC,,424.sdf,sdfs/439.sdf
+440,AKC_s-0034-1382826,NATURAL,,425.sdf,sdfs/440.sdf
+441,AKC_jac/dkt210,SYNTHETIC,Interessante,426.sdf,sdfs/441.sdf
+442,AKC_j.exppara.2014.06.004,DRUG,,427.sdf,sdfs/442.sdf
+443,AKC_s00436-014-3868-y,DRUG,,428.sdf,sdfs/443.sdf
+444,AKC_1570180811666140423203826,SYNTHETIC,Muito bom para screening,429.sdf,sdfs/444.sdf
+445,AKC_AAC.02481-13,SYNTHETIC,,430.sdf,sdfs/445.sdf
+446,AKC_j.fitote.2014.05.009,NATURAL,,431.sdf,sdfs/446.sdf
+447,AKC_j.fitote.2014.05.009,NATURAL,,431_2.sdf,sdfs/447.sdf
+448,AKC_journal.pntd.0000912,SYNTHETIC,Miltefosina,432.sdf,sdfs/448.sdf
+449,AKC_0974-777X.62886,DRUG,Anfotericina B,433.sdf,sdfs/449.sdf
+450,AKC_j.exppara.2014.04.014,NATURAL,,434.sdf,sdfs/450.sdf
+451,AKC_AAC.01240-13,SYNTHETIC,Fazer screening urgente,435.sdf,sdfs/451.sdf
+452,AKC_AAC.01350-13,SYNTHETIC,,436.sdf,sdfs/452.sdf
+453,AKC_C3MD00282A,NATURAL,,437.sdf,sdfs/453.sdf
+454,AKC_cbdd.12235,SYNTHETIC,,438.sdf,sdfs/454.sdf
+455,AKC_cbdd.12235,SYNTHETIC,,439.sdf,sdfs/455.sdf
+456,AKC_cbdd.12239,SYNTHETIC,Muito bom para screening,440.sdf,sdfs/456.sdf
+457,AKC_s11010-013-1954-6,DRUG,,441.sdf,sdfs/457.sdf
+458,AKC_PMC4289877,NATURAL,,442.sdf,sdfs/458.sdf
+459,AKC_C3MD00299C,SYNTHETIC,Fazer screening urgente,443.sdf,sdfs/459.sdf
+460,AKC_AAC.01459-13,SYNTHETIC,,444.sdf,sdfs/460.sdf
+461,AKC_AAC.01459-13,SYNTHETIC,,445.sdf,sdfs/461.sdf
+462,AKC_j.bmcl.2013.11.018,SYNTHETIC,Fazer screening urgente,446.sdf,sdfs/462.sdf
+463,AKC_j.sajb.2013.10.014,NATURAL,,447.sdf,sdfs/463.sdf
+464,AKC_j.actatropica.2013.09.018,DRUG,,448.sdf,sdfs/464.sdf
+465,AKC_jm4006127,SYNTHETIC,,449.sdf,sdfs/465.sdf
+466,AKC_j.bmc.2013.09.002,SYNTHETIC,Muito bom para screening,450.sdf,sdfs/466.sdf
+467,AKC_ml400317e,SYNTHETIC,Fazer screening,451.sdf,sdfs/467.sdf
+468,AKC_j.bcp.2013.10.004,NATURAL,,452.sdf,sdfs/468.sdf
+469,AKC_j.bcp.2013.10.004,NATURAL,,453.sdf,sdfs/469.sdf
+470,AKC_AAC.00557-13,SYNTHETIC,,454.sdf,sdfs/470.sdf
+471,AKC_j.exppara.2013.07.021,SYNTHETIC,,455.sdf,sdfs/471.sdf
+472,AKC_j.bmcl.2013.06.060,SYNTHETIC,Muito bom para screening,456.sdf,sdfs/472.sdf
+473,AKC_j.exppara.2013.06.015,SYNTHETIC,,457.sdf,sdfs/473.sdf
+474,AKC_14756366.2012.689297,SYNTHETIC,,458.sdf,sdfs/474.sdf
+475,AKC_14756366.2012.689297,SYNTHETIC,,459.sdf,sdfs/475.sdf
+476,AKC_cmdc.201300176,SYNTHETIC,Crystal,460.sdf,sdfs/476.sdf
+477,AKC_cmdc.201300129,SYNTHETIC,,461.sdf,sdfs/477.sdf
+478,AKC_s00044-012-0355-9,SYNTHETIC,,462.sdf,sdfs/478.sdf
+479,AKC_s00044-012-0355-9,SYNTHETIC,,463.sdf,sdfs/479.sdf
+480,AKC_jm400053v,SYNTHETIC,Fazer screening,464.sdf,sdfs/480.sdf
+481,AKC_jmm.0.058115-0,DRUG,,465.sdf,sdfs/481.sdf
+482,AKC_jmm.0.058115-0,DRUG,,466.sdf,sdfs/482.sdf
+483,AKC_jmm.0.058115-0,DRUG,,467.sdf,sdfs/483.sdf
+484,AKC_cbdd.12123,SYNTHETIC,Fazer screening,468.sdf,sdfs/484.sdf
+485,AKC_j.bmcl.2013.03.055,SYNTHETIC,Fazer screening,469.sdf,sdfs/485.sdf
+486,AKC_j.bcp.2013.02.024,DRUG,,470.sdf,sdfs/486.sdf
+487,AKC_s00044-012-0213-9,SYNTHETIC,,471.sdf,sdfs/487.sdf
+488,AKC_s00044-012-0213-9,SYNTHETIC,,472.sdf,sdfs/488.sdf
+489,AKC_s00044-012-0213-9,SYNTHETIC,,473.sdf,sdfs/489.sdf
+490,AKC_cbdd.12112,SYNTHETIC,,474.sdf,sdfs/490.sdf
+491,AKC_j.ejmech.2013.01.001,SYNTHETIC,,475.sdf,sdfs/491.sdf
+492,AKC_j.ejmech.2013.02.024,SYNTHETIC,,476.sdf,sdfs/492.sdf
+493,AKC_s-0032-1328258,SYNTHETIC,,477.sdf,sdfs/493.sdf
+494,AKC_s-0032-1328258,SYNTHETIC,,478.sdf,sdfs/494.sdf
+495,AKC_S0074-02762013000100010,SYNTHETIC,,479.sdf,sdfs/495.sdf
+496,AKC_S0074-02762013000100010,SYNTHETIC,,480.sdf,sdfs/496.sdf
+497,AKC_journal.pone.0051864,SYNTHETIC,,481.sdf,sdfs/497.sdf
+498,AKC_journal.pone.0051864,SYNTHETIC,,482.sdf,sdfs/498.sdf
+499,AKC_1934578X1300801109,NATURAL,,483.sdf,sdfs/499.sdf
+500,AKC_journal.pntd.0002494,NATURAL,,484.sdf,sdfs/500.sdf
+501,AKC_journal.pntd.0002494,NATURAL,,485.sdf,sdfs/501.sdf
+502,AKC_S0717-97072013000200014,SYNTHETIC,,486.sdf,sdfs/502.sdf
+503,AKC_0103-5053.20130166,NATURAL,,487.sdf,sdfs/503.sdf
+504,AKC_j.chemphyslip.2013.05.002,SYNTHETIC,,488.sdf,sdfs/504.sdf
+505,AKC_S0102-695X2013005000022,NATURAL,,489.sdf,sdfs/505.sdf
+506,AKC_molecules18011053,NATURAL,,490.sdf,sdfs/506.sdf
+507,AKC_molecules18011053,NATURAL,,491.sdf,sdfs/507.sdf
+508,AKC_j.bmcl.2012.10.110,SYNTHETIC,Fazer screening,492.sdf,sdfs/508.sdf
+509,AKC_j.ejmech.2012.10.047,SYNTHETIC,Interessante,493.sdf,sdfs/509.sdf
+510,AKC_journal.pntd.0001987,DRUG,,494.sdf,sdfs/510.sdf
+511,AKC_j.ejmech.2012.06.021,NATURAL,,495.sdf,sdfs/511.sdf
+512,AKC_j.ejmech.2012.10.048,SYNTHETIC,,496.sdf,sdfs/512.sdf
+513,AKC_s00044-011-9886-8,SYNTHETIC,,497.sdf,sdfs/513.sdf
+514,AKC_S0100-736X2012001100015,NATURAL,,498.sdf,sdfs/514.sdf
+515,AKC_j.exppara.2012.08.019,SYNTHETIC,,499.sdf,sdfs/515.sdf
+516,AKC_cbdd.12017,SYNTHETIC,,500.sdf,sdfs/516.sdf
+517,AKC_jm301172v,SYNTHETIC,Paia,501.sdf,sdfs/517.sdf
+518,AKC_bpb.b12-00419,SYNTHETIC,,502.sdf,sdfs/518.sdf
+519,AKC_j.parint.2012.02.001,SYNTHETIC,,503.sdf,sdfs/519.sdf
+520,AKC_j.parint.2012.02.001,SYNTHETIC,,504.sdf,sdfs/520.sdf
+521,AKC_jac/dks159,NATURAL,ACIDO GLICIRIZICO,505.sdf,sdfs/521.sdf
+522,AKC_j.ejmech.2012.04.034,NATURAL,,505.sdf,sdfs/522.sdf
+523,AKC_j.ejmech.2012.04.034,NATURAL,,506.sdf,sdfs/523.sdf
+524,AKC_j.ejmech.2012.04.029,SYNTHETIC,,507.sdf,sdfs/524.sdf
+525,AKC_s00436-012-2818-9,SYNTHETIC,,508.sdf,sdfs/525.sdf
+526,AKC_S0074-02762012000300012,SYNTHETIC,,509.sdf,sdfs/526.sdf
+527,AKC_s-0031-1298459,SYNTHETIC,,510.sdf,sdfs/527.sdf
+528,AKC_j.biopha.2011.10.005,SYNTHETIC,,511.sdf,sdfs/528.sdf
+529,AKC_ml200280r,SYNTHETIC,,512.sdf,sdfs/529.sdf
+530,AKC_ml200280r,SYNTHETIC,,513.sdf,sdfs/530.sdf
+531,AKC_ejoc.201101414,SYNTHETIC,,514.sdf,sdfs/531.sdf
+532,AKC_scitranslmed.3003326,DRUG,,515.sdf,sdfs/532.sdf
+533,AKC_jac/dkr480,SYNTHETIC,,516.sdf,sdfs/533.sdf
+534,AKC_jac/dkr480,SYNTHETIC,,517.sdf,sdfs/534.sdf
+535,AKC_2012/203646,NATURAL,,518.sdf,sdfs/535.sdf
+536,AKC_j.exppara.2012.08.016,NATURAL,,519.sdf,sdfs/536.sdf
+537,AKC_157018012800389359,DRUG,,520.sdf,sdfs/537.sdf
+538,AKC_s00436-011-2498-x,SYNTHETIC,,521.sdf,sdfs/538.sdf
+539,AKC_AAC.00700-11,SYNTHETIC,,522.sdf,sdfs/539.sdf
+540,AKC_j.bmc.2011.09.025,SYNTHETIC,Muito bom para screening,523.sdf,sdfs/540.sdf
+541,AKC_j.jep.2011.07.008,NATURAL,,524.sdf,sdfs/541.sdf
+542,AKC_ptr.3404,NATURAL,,525.sdf,sdfs/542.sdf
+543,AKC_j.ejmech.2011.04.054,SYNTHETIC,,526.sdf,sdfs/543.sdf
+544,AKC_j.bmcl.2011.05.076,SYNTHETIC,,527.sdf,sdfs/544.sdf
+545,AKC_j.bmcl.2011.05.076,SYNTHETIC,,528.sdf,sdfs/545.sdf
+546,AKC_j.1747-0285.2011.01092.x,SYNTHETIC,Muito bom para screening,529.sdf,sdfs/546.sdf
+547,AKC_cpb.59.855,SYNTHETIC,,530.sdf,sdfs/547.sdf
+548,AKC_s11030-019-09953-4,SYNTHETIC,,531.sdf,sdfs/548.sdf
+549,AKC_j.ejmech.2011.03.053,SYNTHETIC,Fazer screening,532.sdf,sdfs/549.sdf
+550,AKC_j.ijantimicag.2011.02.003,SYNTHETIC,,533.sdf,sdfs/550.sdf
+551,AKC_molecules16053469,SYNTHETIC,,534.sdf,sdfs/551.sdf
+552,AKC_j.bmc.2011.02.051,SYNTHETIC,,535.sdf,sdfs/552.sdf
+553,AKC_journal.pntd.0000962,DRUG,,536.sdf,sdfs/553.sdf
+554,AKC_journal.pntd.0000962,DRUG,,537.sdf,sdfs/554.sdf
+555,AKC_AAC.00436-10,SYNTHETIC,Sem centro quiral,538.sdf,sdfs/555.sdf
+556,AKC_j.actatropica.2010.10.011,SYNTHETIC,Muito bom para screening,539.sdf,sdfs/556.sdf
+557,AKC_md9112369,NATURAL,,540.sdf,sdfs/557.sdf
+558,AKC_0971-5916.91005,NATURAL,,541.sdf,sdfs/558.sdf
+559,AKC_s00436-010-2073-x,SYNTHETIC,Interessante,542.sdf,sdfs/559.sdf
+560,AKC_AAC.00985-10,DRUG,,543.sdf,sdfs/560.sdf
+561,AKC_AAC.00327-10,SYNTHETIC,Fazer screening,544.sdf,sdfs/561.sdf
+562,AKC_AAC.00327-10,SYNTHETIC,Fazer screening,545.sdf,sdfs/562.sdf
+563,AKC_j.parint.2010.08.005,NATURAL,,546.sdf,sdfs/563.sdf
+564,AKC_j.bmcl.2010.08.119,SYNTHETIC,Fazer screening,547.sdf,sdfs/564.sdf
+565,AKC_j.bmcl.2010.07.078,SYNTHETIC,,548.sdf,sdfs/565.sdf
+566,AKC_tsw.2010.176,SYNTHETIC,,549.sdf,sdfs/566.sdf
+567,AKC_ptr.3052,SYNTHETIC,,550.sdf,sdfs/567.sdf
+568,AKC_j.bmc.2010.05.018,SYNTHETIC,Interessante,551.sdf,sdfs/568.sdf
+569,AKC_jac/dkq189,DRUG,,552.sdf,sdfs/569.sdf
+570,AKC_jac/dkq189,DRUG,,552_2.sdf,sdfs/570.sdf
+571,AKC_AAC.00250-10,SYNTHETIC,Muito bom para screening,553.sdf,sdfs/571.sdf
+572,AKC_j.parint.2009.12.009,NATURAL,,554.sdf,sdfs/572.sdf
+573,AKC_j.ejmech.2010.02.018,SYNTHETIC,Muito bom para screening,555.sdf,sdfs/573.sdf
+574,AKC_j.ejmech.2010.02.015,SYNTHETIC,,556.sdf,sdfs/574.sdf
+575,AKC_journal.pntd.0000675,SYNTHETIC,,557.sdf,sdfs/575.sdf
+576,AKC_journal.pntd.0000675,SYNTHETIC,Muito bom para screening,558.sdf,sdfs/576.sdf
+577,AKC_s00436-010-1826-x,DRUG,,559.sdf,sdfs/577.sdf
+578,AKC_ja.2010.2,NATURAL,,560.sdf,sdfs/578.sdf
+579,AKC_j.ejmech.2009.10.022,SYNTHETIC,,561.sdf,sdfs/579.sdf
+580,AKC_j.ejmech.2009.11.035,NATURAL,,562.sdf,sdfs/580.sdf
+581,AKC_j.bmc.2010.01.003,SYNTHETIC,Paia,563.sdf,sdfs/581.sdf
+582,AKC_s00436-010-1973-0,NATURAL,,564.sdf,sdfs/582.sdf
+583,AKC_j.ejmech.2010.04.004,SYNTHETIC,Muito bom para screening,565.sdf,sdfs/583.sdf
+584,AKC_j.bmcl.2009.10.117,SYNTHETIC,,566.sdf,sdfs/584.sdf
+585,AKC_14786419.2012.696254,SYNTHETIC,,567.sdf,sdfs/585.sdf
+586,AKC_jm900564x,SYNTHETIC,Fazer screening,568.sdf,sdfs/586.sdf
+587,AKC_ptr.2788,NATURAL,,569.sdf,sdfs/587.sdf
+588,AKC_jmm.0.011155-0,SYNTHETIC,Paia,570.sdf,sdfs/588.sdf
+589,AKC_s00284-009-9447-2,SYNTHETIC,Muito bom para screening,571.sdf,sdfs/589.sdf
+590,AKC_j.bmcl.2009.03.020,SYNTHETIC,,572.sdf,sdfs/590.sdf
+591,AKC_j.bmcl.2009.03.039,NATURAL,,573.sdf,sdfs/591.sdf
+592,AKC_j.ejmech.2008.04.016,SYNTHETIC,,574.sdf,sdfs/592.sdf
+593,AKC_j.bmc.2008.11.031,SYNTHETIC,,575.sdf,sdfs/593.sdf
+594,AKC_j.exppara.2008.12.004,SYNTHETIC,Muito bom para screening,576.sdf,sdfs/594.sdf
+595,AKC_znc-2009-7-807,NATURAL,,577.sdf,sdfs/595.sdf
+596,AKC_znc-2009-7-807,NATURAL,,578.sdf,sdfs/596.sdf
+597,AC_j.biopha.2008.08.024,NATURAL,,579.sdf,sdfs/597.sdf
+598,AKC_j.biopha.2008.08.024,NATURAL,,579_2.sdf,sdfs/598.sdf
+599,AKC_j.ejmech.2007.12.014,SYNTHETIC,,580.sdf,sdfs/599.sdf
+600,AKC_AAC.00124-08,SYNTHETIC,Paia,581.sdf,sdfs/600.sdf
+601,AKC_j.bmc.2008.08.024,SYNTHETIC,Muito bom para screening,582.sdf,sdfs/601.sdf
+602,AKC_j.bmc.2008.07.077,SYNTHETIC,,583.sdf,sdfs/602.sdf
+603,AKC_14756360701585619,SYNTHETIC,,585.sdf,sdfs/603.sdf
+604,AKC_jac/dkn046,DRUG,,586.sdf,sdfs/604.sdf
+605,AKC_j.bmc.2008.02.052,SYNTHETIC,,587.sdf,sdfs/605.sdf
+606,AKC_j.bmc.2008.02.052,SYNTHETIC,,588.sdf,sdfs/606.sdf
+607,AKC_ptr.2334,NATURAL,,589.sdf,sdfs/607.sdf
+608,AKC_qua.21355,NATURAL,,590.sdf,sdfs/608.sdf
+609,AKC_jm701166b,SYNTHETIC,,591.sdf,sdfs/609.sdf
+610,AKC_jm7012166,SYNTHETIC,Fazer screening,592.sdf,sdfs/610.sdf
+611,AKC_GE-1259.1,SYNTHETIC,Herbicida,593.sdf,sdfs/611.sdf
+612,AKC_j.actatropica.2013.11.003,DRUG,,594.sdf,sdfs/612.sdf
+613,AKC_j.fitote.2007.07.005,NATURAL,,595.sdf,sdfs/613.sdf
+614,AKC_j.bmc.2007.09.007,SYNTHETIC,,596.sdf,sdfs/614.sdf
+615,AKC_j.bmc.2007.08.016,SYNTHETIC,,597.sdf,sdfs/615.sdf
+616,AKC_j.ejmech.2007.02.010,SYNTHETIC,,598.sdf,sdfs/616.sdf
+617,AKC_j.ejmech.2007.02.010,SYNTHETIC,,599.sdf,sdfs/617.sdf
+618,AKC_j.bmc.2007.06.042,SYNTHETIC,,600.sdf,sdfs/618.sdf
+619,AKC_s00726-007-0537-9,SYNTHETIC,,601.sdf,sdfs/619.sdf
+620,AKC_j.bmcl.2007.04.035,SYNTHETIC,,602.sdf,sdfs/620.sdf
+621,AKC_j.jep.2007.03.025,NATURAL,,603.sdf,sdfs/621.sdf
+622,AKC_157018007784620031,SYNTHETIC,,604.sdf,sdfs/622.sdf
+623,AKC_j.bmcl.2006.11.004,SYNTHETIC,,605.sdf,sdfs/623.sdf
+624,AKC_j.ejmech.2006.07.013,SYNTHETIC,,606.sdf,sdfs/624.sdf
+625,AKC_AAC.00936-06,SYNTHETIC,,607.sdf,sdfs/625.sdf
+626,AKC_s-2006-951726,NATURAL,,608.sdf,sdfs/626.sdf
+627,AKC_s-2006-951726,NATURAL,,608_2.sdf,sdfs/627.sdf
+628,AKC_GE-632R1.1,DRUG,,609.sdf,sdfs/628.sdf
+629,AKC_j.ejmech.2006.03.033,SYNTHETIC,,610.sdf,sdfs/629.sdf
+630,AKC_jm060156v,SYNTHETIC,,611.sdf,sdfs/630.sdf
+631,AKC_LAJOP.2007.0004,SYNTHETIC,,612.sdf,sdfs/631.sdf
+632,AKC_j.bmcl.2006.02.012,SYNTHETIC,,613.sdf,sdfs/632.sdf
+633,AKC_j.bmc.2005.10.005,SYNTHETIC,,614.sdf,sdfs/633.sdf
+634,AKC_np0502600,NATURAL,,615.sdf,sdfs/634.sdf
+635,AKC_np0502600,NATURAL,,616.sdf,sdfs/635.sdf
+636,AKC_j.bmc.2005.07.043,SYNTHETIC,,617.sdf,sdfs/636.sdf
+637,AKC_j.bmc.2005.07.043,SYNTHETIC,,617_2.sdf,sdfs/637.sdf
+638,AKC_GE-3489.1,DRUG,,618.sdf,sdfs/638.sdf
+639,AKC_j.bmc.2005.07.005,SYNTHETIC,,619.sdf,sdfs/639.sdf
+640,AKC_j.bmc.2005.06.045,SYNTHETIC,,620.sdf,sdfs/640.sdf
+641,AKC_j.bmc.2005.04.041,SYNTHETIC,,621.sdf,sdfs/641.sdf
+642,AKC_AAC.49.5.1679-1687.2005,SYNTHETIC,,622.sdf,sdfs/642.sdf
+643,AKC_AAC.49.3.1076-1080.2005,SYNTHETIC,,623.sdf,sdfs/643.sdf
+644,AKC_AAC.49.2.808-812.2005,DRUG,,624.sdf,sdfs/644.sdf
+645,AKC_j.ijantimicag.2004.08.010,NATURAL,,625.sdf,sdfs/645.sdf
+646,AKC_j.bioorg.2005.07.001,SYNTHETIC,Interessante,626.sdf,sdfs/646.sdf
+647,AKC_AAC.49.11.176-182.2005,NATURAL,,627.sdf,sdfs/647.sdf
+648,AKC_j.bmc.2004.03.054,SYNTHETIC,Muito bom para screening,628.sdf,sdfs/648.sdf
+649,AKC,NATURAL,,629.sdf,sdfs/649.sdf
+650,AKC_0944-7113-00381,NATURAL,,630.sdf,sdfs/650.sdf
+651,AKC_s-2004-815460,NATURAL,,631.sdf,sdfs/651.sdf
+652,AKC_S0001-706X(02)00258-9,NATURAL,,633.sdf,sdfs/652.sdf
+653,AKC_S0223-5234(03)00119-3,SYNTHETIC,,634.sdf,sdfs/653.sdf
+654,AKC_1475636021000005613,SYNTHETIC,,635.sdf,sdfs/654.sdf
+655,AKC_S0001-706X(02)00180-8,SYNTHETIC,Interessante,636.sdf,sdfs/655.sdf
+656,AKC_AAC.46.8.2569-2574.2002,DRUG,,637.sdf,sdfs/656.sdf
+657,AKC_AAC.46.3.797-807.2002,SYNTHETIC,,638.sdf,sdfs/657.sdf
+658,AKC_parasite/2002094367,SYNTHETIC,,639.sdf,sdfs/658.sdf
+659,AKC_AAC.46.8.2588-2594.2002,SYNTHETIC,,640.sdf,sdfs/659.sdf
+660,AKC_AAC.45.5.1349-1354.2001,NATURAL,,641.sdf,sdfs/660.sdf
+661,AKC_S0001-706X(00)00161-3,NATURAL,,642.sdf,sdfs/661.sdf
+662,AKC_jm000156,SYNTHETIC,,643.sdf,sdfs/662.sdf
+663,AKC_S0960-894X(00)00154-2,SYNTHETIC,,644.sdf,sdfs/663.sdf
+664,AKC_s-1999-13993,SYNTHETIC,,645.sdf,sdfs/664.sdf
+665,AKC_j.1574-6968.1999.tb13495.x,SYNTHETIC,,646.sdf,sdfs/665.sdf
+666,AKC_jac/43.3.359,SYNTHETIC,,647.sdf,sdfs/666.sdf
+667,AKC_AAC.43.5.1234,NATURAL,,648.sdf,sdfs/667.sdf
+668,AKC_jm9804073,SYNTHETIC,,649.sdf,sdfs/668.sdf
+669,AKC_jm9804073,SYNTHETIC,,650.sdf,sdfs/669.sdf
+670,AKC_jm970232h,SYNTHETIC,,651.sdf,sdfs/670.sdf
+671,AKC_00034983.1996.11813083,SYNTHETIC,,652.sdf,sdfs/671.sdf
+672,AKC_s-2006-959531,NATURAL,,653.sdf,sdfs/672.sdf
+673,AKC_ptr.2650070203,NATURAL,,654.sdf,sdfs/673.sdf
+674,AKC_AAC.37.5.991,SYNTHETIC,,655.sdf,sdfs/674.sdf
+675,AKC_AAC.37.5.991,SYNTHETIC,,656.sdf,sdfs/675.sdf
+676,AKC_0035-9203(93)90499-g,DRUG,,657.sdf,sdfs/676.sdf
+677,AKC_jac/30.6.827,DRUG,,658.sdf,sdfs/677.sdf
+678,AKC_1306154,SYNTHETIC,,659.sdf,sdfs/678.sdf
+679,AKC_3283487,DRUG,,660.sdf,sdfs/679.sdf
+680,AKC_s-2006-960086,NATURAL,,661.sdf,sdfs/680.sdf
+681,AKC_0006-291X(90)92109-D,SYNTHETIC,Aminoácido,662.sdf,sdfs/681.sdf
+682,AKC_S0031182000061205,SYNTHETIC,Aminoácido,663.sdf,sdfs/682.sdf
+683,AKC_0166-6851(88)90147-8,SYNTHETIC,Incerto,664.sdf,sdfs/683.sdf
+684,AKC_ajtmh.1986.35.1110,SYNTHETIC,Interessante,665.sdf,sdfs/684.sdf
+685,AKC_0035-9203(85)90255-X,DRUG,,666.sdf,sdfs/685.sdf
+686,AKC_jm00375a006,SYNTHETIC,,667.sdf,sdfs/686.sdf
+687,AKC_0006-2952(82)90203-9,DRUG,,668.sdf,sdfs/687.sdf
+688,AKC_0024-3205(81)90062-X,SYNTHETIC,,669.sdf,sdfs/688.sdf
+689,AKC_0014-5793(80)80364-4,SYNTHETIC,Interessante,670.sdf,sdfs/689.sdf
+690,AKC_j.prmcm.2022.100176,NATURAL,,671.sdf,sdfs/690.sdf
+691,AKC_fmb-2020-0263,SYNTHETIC,,672.sdf,sdfs/691.sdf
+692,AKC_fmb-2020-0263,SYNTHETIC,,673.sdf,sdfs/692.sdf
+693,AKC_j.exppara.2022.108383,NATURAL,,674.sdf,sdfs/693.sdf
+694,AKC_fmc-2017-0120,SYNTHETIC,,675.sdf,sdfs/694.sdf
+695,AKC_j.cimid.2022.101797,NATURAL,,676.sdf,sdfs/695.sdf
+696,AKC_BRIAC132.135,SYNTHETIC,,677.sdf,sdfs/696.sdf
+697,AKC_s00436-022-07532-5,NATURAL,,678.sdf,sdfs/697.sdf
+698,AKC_acsomega.2c00467,SYNTHETIC,,679.sdf,sdfs/698.sdf
+699,AKC_j.parint.2021.102458,NATURAL,,680.sdf,sdfs/699.sdf
+700,AKC_j.intimp.2022.108952,DRUG,,681.sdf,sdfs/700.sdf
+701,AKC_s41598-022-15449-3,SYNTHETIC,Fazer screening,682.sdf,sdfs/701.sdf
+702,AKC_j.jpba.2021.114469,DRUG,,683.sdf,sdfs/702.sdf
+703,AKC_books978-3-0365-3766-5,NATURAL,,684.sdf,sdfs/703.sdf
+704,AKC_biomedicines10051136,SYNTHETIC,Axenica,685.sdf,sdfs/704.sdf
+705,AKC_j.parint.2022.102647,SYNTHETIC,,686.sdf,sdfs/705.sdf
+706,AKC_21-82,NATURAL,,687.sdf,sdfs/706.sdf
+707,AKC_1568026622666220707095718,NATURAL,,688.sdf,sdfs/707.sdf
+708,AKC_antibiotics11101402,SYNTHETIC,Muito bom para screening,689.sdf,sdfs/708.sdf
+709,AKC_fphar.2023.1122287,SYNTHETIC,Ensaios Clínicos,690.sdf,sdfs/709.sdf
+710,AKC_journal.pone.0124183,SYNTHETIC,Promissora,691.sdf,sdfs/710.sdf
+711,journal.pone.0124183,SYNTHETIC,Promissora,692.sdf,sdfs/711.sdf
+712,AKC_journal.pone.0124183,SYNTHETIC,Promissora,693.sdf,sdfs/712.sdf
+713,AKC_nature19339,SYNTHETIC,Promissora,694.sdf,sdfs/713.sdf
+714,AKC_nature19339,SYNTHETIC,Promissora,695.sdf,sdfs/714.sdf
+715,AKC_nature19339,SYNTHETIC,Promissora,696.sdf,sdfs/715.sdf
+716,AKC_nature19339,SYNTHETIC,Promissora,697.sdf,sdfs/716.sdf
+717,AKC_acs.jmedchem.0c00499,SYNTHETIC,Ensaios Clínicos,698.sdf,sdfs/717.sdf
+718,AKC_pnas.1820175116,SYNTHETIC,Ensaios Clínicos,699.sdf,sdfs/718.sdf
+719,AKC_s41598-018-22063-9,SYNTHETIC,Ensaios Clínicos,700.sdf,sdfs/719.sdf
+720,AKC_s41598-018-22063-9,SYNTHETIC,Ensaios Clínicos,701.sdf,sdfs/720.sdf
+721,AKC_s11030-022-10548-9,SYNTHETIC,Muito bom para screening,702_1.sdf,sdfs/721.sdf
+722,AKC_s11030-022-10548-9,SYNTHETIC,Muito bom para screening,702_2.sdf,sdfs/722.sdf
+723,AKC_j.ejmech.2022.114878,SYNTHETIC,Muito bom para screening,703.sdf,sdfs/723.sdf
+724,AKC_14786419.2022.2140336,NATURAL,OK,704.sdf,sdfs/724.sdf
+725,AKC_s11686-022-00632-3,SYNTHETIC,Muito bom para screening,705.sdf,sdfs/725.sdf
+726,AKC_14786419.2022.2137797,NATURAL,EMODINA,706.sdf,sdfs/726.sdf
+727,AKC_j.biopha.2022.114012,NATURAL,Big,707.sdf,sdfs/727.sdf
+728,AKC_acsinfecdis.2c00562,NATURAL,Muito bom para screening,708.sdf,sdfs/728.sdf
+729,AKC_antibiotics11121712,NATURAL,OK,709.sdf,sdfs/729.sdf
+730,AKC_tropicalmed7120403,SYNTHETIC,OK,710.sdf,sdfs/730.sdf
+731,AKC_14756366.2022.2150763,SYNTHETIC,Muito bom para screening,711.sdf,sdfs/731.sdf
+732,AKC_14756366.2022.2150763,SYNTHETIC,,712.sdf,sdfs/732.sdf
+733,AKC_/jac/dkac395,SYNTHETIC,Muito bom para screening,713.sdf,sdfs/733.sdf
+734,AKC_acsomega.2c06455,SYNTHETIC,Muito bom para screening,714.sdf,sdfs/734.sdf
+735,AKC_slct.202203852,NATURAL,OK,715.sdf,sdfs/735.sdf
+736,AKC_j.ejmech.2022.114996,SYNTHETIC,OK,716.sdf,sdfs/736.sdf
+737,AKC_s00044-022-02994-9,SYNTHETIC,OK,717.sdf,sdfs/737.sdf
+738,AKC_j.bmc.2022.117136,SYNTHETIC,OK,718.sdf,sdfs/738.sdf
+739,AKC_s11030-022-10569-4,SYNTHETIC,OK,719.sdf,sdfs/739.sdf
+740,AKC_j.ejmech.2022.115049,SYNTHETIC,Muito bom para screening,720.sdf,sdfs/740.sdf
+741,AKC_j.ejmech.2022.115049,SYNTHETIC,Muito bom para screening,721.sdf,sdfs/741.sdf
+742,AKC_fcimb.2022.974910,NATURAL,OK,722.sdf,sdfs/742.sdf
+743,AKC_biomedicines11010219,SYNTHETIC,OK,723.sdf,sdfs/743.sdf
+744,AKC_M1573,SYNTHETIC,Muito bom para screening,724.sdf,sdfs/744.sdf
+745,AKC_j.bjid.2023.102743,NATURAL,OK,725.sdf,sdfs/745.sdf
+746,AKC_j.ejmech.2023.115223,SYNTHETIC,OK,726.sdf,sdfs/746.sdf
+747,AKC_j.ejmech.2023.115223,SYNTHETIC,Muito bom para screening,727.sdf,sdfs/747.sdf
+748,AKC_j.ejmech.2022.114959,SYNTHETIC,OK,728.sdf,sdfs/748.sdf
+749,AKC_pj.2023.15.11,DRUG,OK,729.sdf,sdfs/749.sdf
+750,AKC_S0223523423002222,SYNTHETIC,Muito bom para screening,730.sdf,sdfs/750.sdf
+751,AKC_j.exppara.2023.108498,SYNTHETIC,Muito bom para screening,731.sdf,sdfs/751.sdf
+752,AKC_acs.jmedchem.2c01932,SYNTHETIC,Muito bom para screening,732.sdf,sdfs/752.sdf
+753,AKC_j.ejmech.2023.115310,SYNTHETIC,OK,733_1.sdf,sdfs/753.sdf
+754,AKC_j.ejmech.2023.115310,SYNTHETIC,OK,733_2.sdf,sdfs/754.sdf
+755,AKC_D2MD00464J,SYNTHETIC,Estrutura Incerta,734.sdf,sdfs/755.sdf
+756,AKC_j.ejmech.2023.115333,SYNTHETIC,Muito bom para screening,735.sdf,sdfs/756.sdf
+757,AKC_j.fitote.2023.105499,NATURAL,OK,736.sdf,sdfs/757.sdf
+758,AKC_biom13040637,SYNTHETIC,Muito bom para screening,737.sdf,sdfs/758.sdf
+759,AKC_biom13040637,SYNTHETIC,Muito bom para screening,738.sdf,sdfs/759.sdf
+760,AKC_2208-2360,DRUG,OK,739.sdf,sdfs/760.sdf
+761,AKC_2208-2360,DRUG,OK,740.sdf,sdfs/761.sdf
+762,AKC_j.rechem.2023.100943,SYNTHETIC,OK,741.sdf,sdfs/762.sdf
+763,AKC_acsinfecdis.3c00090,SYNTHETIC,OK,742.sdf,sdfs/763.sdf
+764,AKC_j.ejmech.2023.115451,SYNTHETIC,Muito bom para screening,743.sdf,sdfs/764.sdf
+765,AKC_j.ejmech.2023.115451,SYNTHETIC,Muito bom para screening,744.sdf,sdfs/765.sdf
+766,AKC_j.ejmech.2023.115451,SYNTHETIC,Muito bom para screening,745.sdf,sdfs/766.sdf
+767,AKC_j.bioorg.2023.106593,SYNTHETIC,Muito bom para screening,746.sdf,sdfs/767.sdf
+768,AKC_tropicalmed8030141,SYNTHETIC,OK,747.sdf,sdfs/768.sdf
+769,AKC_ap-2017-0070,DRUG,OK,748.sdf,sdfs/769.sdf
+770,AKC_/j.ijantimicag.2018.12.011,SYNTHETIC,Estrutura Incerta,749.sdf,sdfs/770.sdf
+771,AKC_AAC.01766-19,SYNTHETIC,Estrutura Incerta,750.sdf,sdfs/771.sdf
+772,AKC_0103-5053.20230073,SYNTHETIC,OK,751.sdf,sdfs/772.sdf
+773,AKC_j.bioorg.2023.106615,SYNTHETIC,OK,752.sdf,sdfs/773.sdf
+774,AKC_07391102.2023.2212779,NATURAL,OK,753.sdf,sdfs/774.sdf
+775,AKC_acs.jmedchem.3c00056,SYNTHETIC,OK,754.sdf,sdfs/775.sdf
+776,AKC_j.exppara.2023.108555,SYNTHETIC,OK,755.sdf,sdfs/776.sdf
+777,AKC_d3md00081h,SYNTHETIC,OK,756.sdf,sdfs/777.sdf
+778,AKC_md21060333,NATURAL,OK,757.sdf,sdfs/778.sdf
+779,AKC_j.ejmech.2023.115524,SYNTHETIC,Muito bom para screening,758.sdf,sdfs/779.sdf
+780,AKC_rs.3.rs-2711791/v1,DRUG,OK,759.sdf,sdfs/780.sdf
+781,AKC_cbdv.202300523,SYNTHETIC,OK,760.sdf,sdfs/781.sdf
+782,AKC_07391102.2023.2224897,SYNTHETIC,Muito bom para screening,761_1.sdf,sdfs/782.sdf
+783,AKC_07391102.2023.2224897,SYNTHETIC,Muito bom para screening,761_2.sdf,sdfs/783.sdf
+784,AKC_j.heliyon.2023.e17801,SYNTHETIC,OK,762.sdf,sdfs/784.sdf
+785,AKC_D3MD00243H,SYNTHETIC,E-majoritário,763.sdf,sdfs/785.sdf
+786,AKC_j.intimp.2023.110750,SYNTHETIC,OK,764.sdf,sdfs/786.sdf
+787,AKC_slct.202302415,SYNTHETIC,OK,765.sdf,sdfs/787.sdf
+788,AKC_ph16081113,SYNTHETIC,Fazer screening,766.sdf,sdfs/788.sdf
+789,AKC_j.algal.2023.103241,NATURAL,OK,767.sdf,sdfs/789.sdf
+790,AKC_j.algal.2023.103241,NATURAL,,768.sdf,sdfs/790.sdf
+791,AKC_j.algal.2023.103241,NATURAL,OK,769.sdf,sdfs/791.sdf
+792,AKC_j.algal.2023.103241,NATURAL,OK,770.sdf,sdfs/792.sdf
+793,AKC_d3md00220a,SYNTHETIC,URGENTE,771.sdf,sdfs/793.sdf
+794,AKC_preprints202308.1856.v1,SYNTHETIC,OK,772.sdf,sdfs/794.sdf
+795,AKC_ufu.di.2023.494,SYNTHETIC,TESE,773.sdf,sdfs/795.sdf
+796,AKC_ufu.di.2023.494,SYNTHETIC,TESE,774.sdf,sdfs/796.sdf
+797,AKC_pharmaceutics15092292,NATURAL,(-)-5-demethoxygrandisin B.,775.sdf,sdfs/797.sdf
+798,AKC_journal.pone.0291321,DRUG,Azalacida,776.sdf,sdfs/798.sdf
+799,AKC_journal.pntd.0011646,SYNTHETIC,Screening urgente,777.sdf,sdfs/799.sdf
+800,AKC_acs.jmedchem.3c00697,SYNTHETIC,Screening urgente,778.sdf,sdfs/800.sdf
+801,AKC_j.bioorg.2023.106890,SYNTHETIC,OK,779.sdf,sdfs/801.sdf
+802,AKC_j.ejmech.2023.115863,SYNTHETIC,OK,781_1.sdf,sdfs/802.sdf
+803,AKC_j.ejmech.2023.115863,SYNTHETIC,OK,781_2.sdf,sdfs/803.sdf
+804,AKC_acsomega.3c05441,SYNTHETIC,Screening urgente,782.sdf,sdfs/804.sdf
+805,AKC_20499361231208294,SYNTHETIC,OK,783.sdf,sdfs/805.sdf
+806,AKC_preprints202308.1856.v1,SYNTHETIC,OK,784.sdf,sdfs/806.sdf
+807,AKC_agronomy13112765,NATURAL,OK,785.sdf,sdfs/807.sdf
+808,AKC_07391102.2023.2279279,SYNTHETIC,OK,786.sdf,sdfs/808.sdf
+809,AKC_1809-4392202300281,NATURAL,OK,787.sdf,sdfs/809.sdf
+810,AKC_s11030-022-10548-9,SYNTHETIC,Screening ugente,788_R.sdf,sdfs/810.sdf
+811,AKC_s11030-022-10548-9,SYNTHETIC,Screening urgente,788_S.sdf,sdfs/811.sdf
+812,AKC_mp100035f,NATURAL,OK,789.sdf,sdfs/812.sdf
+813,AKC_ardp.202300440,SYNTHETIC,OK,790.sdf,sdfs/813.sdf
+814,AKC_14786419.2023.2288232,SYNTHETIC,OK,791_rr.sdf,sdfs/814.sdf
+815,AKC_14786419.2023.2288232,SYNTHETIC,OK,791_rs.sdf,sdfs/815.sdf
+816,AKC_14786419.2023.2288232,SYNTHETIC,OK,791_sr.sdf,sdfs/816.sdf
+817,AKC_14786419.2023.2288232,SYNTHETIC,OK,791_ss.sdf,sdfs/817.sdf
+818,AKC_journal.pone.0292946,SYNTHETIC,Screening urgente,792.sdf,sdfs/818.sdf
+819,AKC_s11696-023-03214-3,SYNTHETIC,OK,793.sdf,sdfs/819.sdf
+820,AKC_s11686-023-00746-2,DRUG,OK,794.sdf,sdfs/820.sdf
+821,AKC_s11686-023-00746-2,NATURAL,Screening urgente,795.sdf,sdfs/821.sdf
+822,AKC_0074-02760170217,NATURAL,Screening urgente,796.sdf,sdfs/822.sdf
+823,AKC_scitranslmed.adh9902,SYNTHETIC,OK,797.sdf,sdfs/823.sdf
+824,AKC_molecules29010074,SYNTHETIC,Screening urgente,798.sdf,sdfs/824.sdf
+825,AKC_preprints202312.1664.v1,SYNTHETIC,OK,799.sdf,sdfs/825.sdf
+826,AKC_rs.3.rs-3731615/v1,SYNTHETIC,OK,800.sdf,sdfs/826.sdf
+827,AKC_rs.3.rs-3731615/v1,SYNTHETIC,Screening urgente,801.sdf,sdfs/827.sdf
+828,AKC_rs.3.rs-3731615/v1,SYNTHETIC,OK,802.sdf,sdfs/828.sdf
+829,AKC_rs.3.rs-3731615/v1,SYNTHETIC,Screening urgente,803.sdf,sdfs/829.sdf
+830,AKC_acs.jmedchem.3c01439,SYNTHETIC,OK,804.sdf,sdfs/830.sdf
+831,AKC_ijms25010659,SYNTHETIC,OK,805.sdf,sdfs/831.sdf
+832,AKC_1809-4392202203181C813,NATURAL,Screening urgente,806.sdf,sdfs/832.sdf
+833,AKC_preprints202401.0661.v1,SYNTHETIC,poor,807.sdf,sdfs/833.sdf
+834,AKC_j.ijantimicag.2024.107092,SYNTHETIC,Screening urgente,808.sdf,sdfs/834.sdf
+835,AKC_j.ijantimicag.2024.107092,SYNTHETIC,Toxic,809.sdf,sdfs/835.sdf
+836,AKC_pathogens13020104,SYNTHETIC,Screening urgente,810.sdf,sdfs/836.sdf
+837,AKC_j.bmc.2013.04.063,SYNTHETIC,OK,811.sdf,sdfs/837.sdf
+838,AKC_aac.02201-12,SYNTHETIC,OK,812.sdf,sdfs/838.sdf
+839,AKC_j.bmcl.2014.03.065,SYNTHETIC,OK,813.sdf,sdfs/839.sdf
+840,AKC_acs.jmedchem.5b00515,SYNTHETIC,Screening urgente,814.sdf,sdfs/840.sdf
+841,AKC_s41598-017-00848-8,SYNTHETIC,OK,815.sdf,sdfs/841.sdf
+842,AKC_bcpt.12990,SYNTHETIC,OK,816.sdf,sdfs/842.sdf
+843,AKC_j.biopha.2011.01.003,SYNTHETIC,OK,817.sdf,sdfs/843.sdf
+844,AKC_j.bmcl.2019.126725,SYNTHETIC,Screening urgente,818.sdf,sdfs/844.sdf
+845,AKC_acsmedchemlett.9b00453,SYNTHETIC,Screening urgente,819.sdf,sdfs/845.sdf
+846,AKC_jhet.4414,SYNTHETIC,Screening urgente,820.sdf,sdfs/846.sdf
+847,AKC_pathogens13030213,NATURAL,OK,821.sdf,sdfs/847.sdf
+848,AKC_j.ejmech.2024.116256,SYNTHETIC,OK,822.sdf,sdfs/848.sdf
+849,AKC,SYNTHETIC,Screening urgente,823-r.sdf,sdfs/849.sdf
+850,AKC,SYNTHETIC,Screening urgente,823-s.sdf,sdfs/850.sdf
+851,AKC_j.ijpddr.2024.100531,SYNTHETIC,OK,824.sdf,sdfs/851.sdf
+852,AKC_j.molstruc.2024.138015,SYNTHETIC,OK,825-e.sdf,sdfs/852.sdf
+853,AKC_j.molstruc.2024.138015,SYNTHETIC,OK,825-z.sdf,sdfs/853.sdf
+854,AKC_j.bmc.2008.12.003,DRUG,,IVM.sdf,sdfs/854.sdf
+855,AKC_OUB,NATURAL,,OUB.sdf,sdfs/855.sdf

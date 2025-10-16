@@ -1,0 +1,263 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>LeishMolDB — Amastigote Killing Compounds</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/cytoscape@3.23.0/dist/cytoscape.min.js"></script>
+    <script src="https://3dmol.org/build/3Dmol-min.js"></script>
+    <style>
+        #graph-loader {
+            pointer-events: none; /* Permite clicar através do loader */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex flex-col min-h-screen">
+
+    {% include 'galeria/partials/_menu.html' %}
+
+    <main class="flex-grow">
+        <header class="bg-white border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+                    Amastigote Killing Compounds
+                </h1>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-500">
+                    An interactive database to accelerate leishmaniasis research.
+                </p>
+                <div class="mt-8 flex justify-center items-center gap-12">
+                    <img src="{% static '/assets/imagens/ufrn.png' %}" alt="UFRN Logo" class="h-16">
+                    <div class="text-center border-l border-r px-8">
+                        <p class="text-5xl font-bold text-blue-600">{{ total_linhas }}</p>
+                        <p class="text-base text-gray-500 font-medium">Molecules</p>
+                    </div>
+                    <img src="{% static '/assets/imagens/lab.png' %}" alt="LABQFC Logo" class="h-16">
+                </div>
+            </div>
+        </header>
+
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex flex-col sm:flex-row justify-between items-center mb-4 border-b pb-4">
+                    <h2 class="text-2xl font-bold text-gray-800">Molecular Similarity Network</h2>
+                    <div class="flex items-center gap-3 mt-4 sm:mt-0">
+                        <label for="threshold" class="text-sm font-medium text-gray-500">Similarity Threshold:</label>
+                        <input id="threshold" type="range" min="0.2" max="0.8" step="0.05" value="0.4" class="w-48">
+                        <span id="threshold-value" class="text-sm font-semibold text-gray-700 w-12 text-center bg-gray-100 rounded-md py-1">0.40</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="lg:col-span-2 relative h-[600px] rounded-lg border bg-gray-50">
+                        <div id="graph-container" class="h-full w-full"></div>
+                        <div id="graph-loader" class="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75 transition-opacity duration-300">
+                            <div class="text-center">
+                                <svg class="animate-spin h-8 w-8 text-blue-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                                <p class="mt-2 text-gray-500">Loading network...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rounded-lg border bg-white p-4 flex flex-col">
+                        <h3 class="font-semibold text-gray-800 border-b pb-2 mb-4">Molecule Details</h3>
+                        <div id="mol-empty" class="text-center text-sm text-gray-400 my-auto flex flex-col justify-center items-center">
+                            <svg class="w-12 h-12 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <p class="mt-2">Click on a node in the network to view details.</p>
+                        </div>
+                        <div id="mol-details" class="hidden flex-grow flex flex-col justify-between">
+                            <div>
+                                <h4 id="mol-name" class="font-bold text-lg text-blue-600 truncate" title="Molecule Name"></h4>
+                                <p id="mol-smiles" class="text-xs text-gray-500 break-all mt-1"></p>
+                                <div id="viewer" class="w-full h-56 relative mt-4 rounded-lg border bg-gray-50"></div>
+                            </div>
+                            <div class="mt-4 flex flex-col space-y-2">
+                                <a id="mol-page-link" href="#" class="w-full text-center px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700 transition-colors">View Details Page</a>
+                                <button id="download-sdf" class="w-full text-center px-4 py-2 bg-gray-200 text-gray-700 rounded-md text-sm font-medium hover:bg-gray-300 transition-colors">Download SDF</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">About the Project</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Our molecular database is a tool to advance the fight against leishmaniasis, a neglected tropical disease that affects millions globally. This project provides a broad collection of molecules, allowing users to explore, visualize, and compare data based on 2D Tanimoto similarity and robust 3D shape alignment using LS-align and RDKit.
+                </p>
+                <div class="mt-6">
+                    <a href="{% url 'download_sdfs' %}" class="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-md transition-colors">
+                        Download All SDFs
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {% include 'galeria/partials/_footer.html' %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const API_GRAPH = '{% url "molecules_graph" %}';
+    const API_MOL = '{% url "molblock_from_smiles" %}';
+    let cy = null, viewer = null, currentMol = null;
+    const container = document.getElementById('graph-container');
+    const loader = document.getElementById('graph-loader');
+    const thresholdInput = document.getElementById('threshold');
+    const thresholdValue = document.getElementById('threshold-value');
+    const molDetails = document.getElementById('mol-details');
+    const molEmpty = document.getElementById('mol-empty');
+    const molNameEl = document.getElementById('mol-name');
+    const molSmilesEl = document.getElementById('mol-smiles');
+    const molPageLink = document.getElementById('mol-page-link');
+    const downloadBtn = document.getElementById('download-sdf');
+    
+    let graphData = null; // Cache for the fetched graph data
+
+    thresholdInput.addEventListener('input', () => {
+        const newThreshold = Number(thresholdInput.value).toFixed(2);
+        thresholdValue.innerText = newThreshold;
+        renderGraph();
+    });
+
+    async function fetchGraphData() {
+        if (graphData) return;
+        loader.style.display = 'flex'; // Use display instead of opacity for robustness
+        try {
+            const res = await fetch(API_GRAPH);
+            if (!res.ok) throw new Error('Network response was not ok');
+            graphData = await res.json();
+        } catch (error) {
+            console.error("Failed to fetch graph data:", error);
+            loader.innerHTML = "<p class='text-red-500'>Failed to load network data.</p>";
+        }
+    }
+
+    function renderGraph() {
+        if (!graphData) return;
+        if (cy) cy.destroy();
+        
+        const thr = parseFloat(thresholdInput.value) || 0;
+        const filteredEdges = graphData.edges.filter(e => e.weight >= thr);
+        const connectedNodeIds = new Set();
+        filteredEdges.forEach(e => {
+            connectedNodeIds.add(e.source);
+            connectedNodeIds.add(e.target);
+        });
+
+        const elements = [];
+        graphData.nodes.forEach(n => {
+            if (connectedNodeIds.has(n.id)) {
+                elements.push({ data: n });
+            }
+        });
+        filteredEdges.forEach((e, i) => elements.push({ data: { ...e, id: 'e' + i } }));
+
+        loader.style.display = 'none'; // Hide loader completely
+
+        cy = cytoscape({
+            container,
+            elements,
+            style: [
+                { selector: 'node', style: {
+                    'background-color': '#2563EB',
+                    'width': 'mapData(degree, 0, 15, 20, 50)',
+                    'height': 'mapData(degree, 0, 15, 20, 50)',
+                    'transition-property': 'background-color, opacity', 'transition-duration': '0.3s'
+                }},
+                { selector: 'node:selected', style: {
+                    'background-color': '#DC2626', 'border-width': 3, 'border-color': '#F59E0B'
+                }},
+                { selector: 'edge', style: {
+                    'width': ele => Math.max(1, 10 * ele.data('weight')),
+                    'line-color': ele => ele.data('weight') > 0.7 ? '#10B981' : '#A78BFA',
+                    'opacity': 0.7, 'transition-property': 'line-color, opacity', 'transition-duration': '0.3s'
+                }},
+                { selector: '.faded', style: { 'opacity': 0.15 } },
+                { selector: '.highlighted', style: {
+                    'background-color': '#F59E0B', 'line-color': '#F59E0B', 'opacity': 1
+                }}
+            ],
+            layout: { name: 'cose', idealEdgeLength: 100, nodeRepulsion: 4000, animate: true, animationDuration: 500 }
+        });
+
+        cy.on('tap', 'node', function(evt){
+            const node = evt.target;
+            cy.elements().not(node.neighborhood()).addClass('faded');
+            node.neighborhood().add(node).removeClass('faded').addClass('highlighted');
+            selectMolecule(node.data());
+        });
+
+        cy.on('tap', function(evt){
+            if (evt.target === cy) {
+                cy.elements().removeClass('faded highlighted');
+            }
+        });
+    }
+
+    function initViewer() {
+        if (!viewer) {
+            viewer = $3Dmol.createViewer(document.getElementById('viewer'), { backgroundColor: 'white' });
+        } else {
+            viewer.clear();
+        }
+    }
+
+    async function selectMolecule(data) {
+        currentMol = data;
+        molEmpty.classList.add('hidden');
+        molDetails.classList.remove('hidden');
+        molNameEl.innerText = data.name || data.label;
+        molSmilesEl.innerText = data.smiles;
+        molPageLink.href = `/imagem/${data.id}`;
+        initViewer();
+
+        try {
+            const res = await fetch(`${API_MOL}?smiles=${encodeURIComponent(data.smiles)}`);
+            if (!res.ok) throw new Error('Failed to fetch molblock');
+            const molblock = await res.text();
+            viewer.addModel(molblock, 'sdf');
+            viewer.setStyle({}, { stick: {} });
+            viewer.zoomTo();
+            viewer.render();
+        } catch (error) {
+            console.error("Failed to load 3D model:", error);
+        }
+    }
+
+    downloadBtn.addEventListener('click', async () => {
+        if (!currentMol) return;
+        try {
+            const res = await fetch(`${API_MOL}?smiles=${encodeURIComponent(currentMol.smiles)}`);
+            const text = await res.text();
+            const blob = new Blob([text], { type: 'chemical/x-mdl-molfile' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${currentMol.name || currentMol.id}.mol`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        } catch (error) {
+            console.error("Failed to download SDF:", error);
+        }
+    });
+
+    async function main() {
+        await fetchGraphData();
+        renderGraph();
+    }
+    main();
+});
+</script>
+
+</body>
+</html>

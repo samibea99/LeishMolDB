@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado do Alinhamento Molecular</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://3dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+</head>
+
+<body class="bg-blue-100">
+    {% include 'galeria/partials/_menu.html' %}
+    <main class="flex-grow pb-20"> <div class="container mx-auto px-4 py-8 mt-5">
+            <div class="bg-white rounded shadow-lg p-5">
+                <div class="mb-8">
+                    <h2 class="text-xl font-semibold text-center text-gray-800">Faça o upload de um arquivo .sdf para calcular a similaridade</h2>
+                    <form method="post" enctype="multipart/form-data" action="{% url 'resultado_3d' %}" class="mt-4">
+                        {% csrf_token %}
+                        <div class="flex justify-center items-center space-x-4">
+                            <label for="fileInput" class="cursor-pointer inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-700">
+                                Escolher arquivo .sdf
+                                <input type="file" id="fileInput" name="file" accept=".sdf" class="hidden">
+                            </label>
+                            <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-500 hover:bg-green-700">
+                                Enviar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <hr class="my-6">
+
+                {% if conteudo_molecula_db and conteudo_molecula_alinhada %}
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Visualização do Alinhamento 3D</h3>
+                    
+                    <div id="container-alinhamento" class="mx-auto" style="height: 600px; width: 100%; max-width: 800px; position: relative; border: 1px solid #ccc;"></div>
+                    
+                    <div class="mt-4 text-sm text-gray-600">
+                        <p><span style="color: blue;">■</span> Molécula de Referência (do Banco de Dados)</p>
+                        <p><span style="color: red;">■</span> Sua Molécula Alinhada</p>
+                    </div>
+                </div>
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        let element = document.getElementById('container-alinhamento');
+                        let config = { backgroundColor: 'white' };
+                        let viewer = $3Dmol.createViewer(element, config);
+
+                        // 1. Pega o conteúdo da molécula de referência (passada pela view)
+                        let moleculaDbData = `{{ conteudo_molecula_db|escapejs }}`;
+                        
+                        // 2. Pega o conteúdo da sua molécula JÁ ALINHADA pelo sensaas
+                        let moleculaAlinhadaData = `{{ conteudo_molecula_alinhada|escapejs }}`;
+
+                        // 3. Adiciona os dois modelos ao MESMO visualizador
+                        viewer.addModel(moleculaDbData, 'sdf');
+                        viewer.addModel(moleculaAlinhadaData, 'sdf');
+
+                        // 4. Estiliza cada molécula com uma cor diferente
+                        viewer.setStyle({model: 0}, {stick: {colorscheme: 'blueCarbon'}}); // Molécula de referência em azul
+                        viewer.setStyle({model: 1}, {stick: {colorscheme: 'redCarbon'}}); // Sua molécula em vermelho
+
+                        viewer.zoomTo();
+                        viewer.render();
+                    });
+                </script>
+                {% endif %}
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white p-4 fixed bottom-0 left-0 w-full">
+        <div class="container mx-auto flex justify-between text-center">
+            <p>Copyright (c) 2018-2021, CNRS, Inserm, Université Côte d'Azur, Dominique Douguet and Frédéric Payan, All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
